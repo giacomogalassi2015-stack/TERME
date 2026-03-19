@@ -215,9 +215,17 @@ p { max-width: 70ch; }
 }
 .hero__bg {
   position: absolute;
-  inset: 0;
-  background: url('https://res.cloudinary.com/terme-equi/image/upload/w_1600,c_fill,f_auto,q_auto:eco/parco-aereo.jpg') center/cover no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* INCOLLA QUI SOTTO L'URL */
+  background-image: url('https://res.cloudinary.com/de278ryzj/image/upload/f_auto,q_auto/v1773928821/503741239_17895433767251714_1050365484845062097_n_v8mhss.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
+
 .hero__bg::after {
   content: '';
   position: absolute;
