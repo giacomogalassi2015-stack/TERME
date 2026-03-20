@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Prezzi & Orari Terme di Equi — Ingressi, Abbonamenti, Noleggi</title>
+  <meta name="description" content="Prezzi aggiornati Terme di Equi: ingressi adulti e bambini, abbonamenti, noleggi. Orario apertura 10:00–19:00. Tariffe ufficiali 2026.">
+  <meta name="keywords" content="prezzi terme Equi, tariffe terme Fivizzano, abbonamento piscine termali, ingresso bambini terme, noleggio lettino ombrellone">
+  <link rel="canonical" href="https://www.termediequi.com/prezzi.html">
+  <link rel="alternate" hreflang="it" href="https://www.termediequi.com/prezzi.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Prezzi & Orari — Terme di Equi, Fivizzano">
+  <meta property="og:description" content="Tutti i prezzi aggiornati: ingressi piscine termali, abbonamenti e noleggi alle Terme di Equi.">
+  <meta property="og:url" content="https://www.termediequi.com/prezzi.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.termediequi.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Prezzi & Orari", "item": "https://www.termediequi.com/prezzi.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <style>
+    /* ── Orario apertura ── */
+    .orario-banner {
+      background:      var(--blu-cobalto);
+      color:           var(--bianco-puro);
+      text-align:      center;
+      padding:         1.1rem 2rem;
+      font-size:       1rem;
+      letter-spacing:  0.08em;
+    }
+    .orario-banner strong {
+      font-family:    var(--font-display);
+      font-size:      1.4rem;
+      letter-spacing: 0.05em;
+      margin-left:    0.5rem;
+    }
+
+    /* ── Nota abbonamenti ── */
+    .note-abbonamenti {
+      background:    var(--blu-marino);
+      color:         var(--bianco-puro);
+      text-align:    center;
+      padding:       1.25rem 2rem;
+      font-size:     0.95rem;
+      letter-spacing: 0.04em;
+    }
+    .note-abbonamenti strong {
+      font-family: var(--font-display);
+      font-size:   1.2rem;
+      display:     block;
+      margin-bottom: 0.2rem;
+      color:       var(--azzurro-turchese);
+    }
+
+    /* ── Accordion estetica ── */
+    .estetica-toggle {
+      width:           100%;
+      background:      var(--bianco-puro);
+      border:          2px solid var(--blu-cobalto);
+      border-radius:   var(--radius-sm);
+      padding:         1rem 1.5rem;
+      font-family:     var(--font-body);
+      font-size:       0.82rem;
+      font-weight:     500;
+      letter-spacing:  0.15em;
+      text-transform:  uppercase;
+      color:           var(--blu-cobalto);
+      cursor:          pointer;
+      display:         flex;
+      justify-content: space-between;
+      align-items:     center;
+      transition:      var(--transition);
+      margin-top:      1rem;
+    }
+    .estetica-toggle:hover {
+      background: var(--blu-cobalto);
+      color:      var(--bianco-puro);
+    }
+    .estetica-toggle .toggle-icon {
+      font-size:  1.1rem;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .estetica-toggle.open { background: var(--blu-cobalto); color: var(--bianco-puro); }
+    .estetica-toggle.open .toggle-icon { transform: rotate(45deg); }
+
+    .estetica-body {
+      display: none;
+      margin-top: 1rem;
+    }
+    .estetica-body.open { display: block; }
+
+    /* ── Estetica category label ── */
+    .price-cat-label {
+      font-family:    var(--font-display);
+      font-size:      1.1rem;
+      color:          var(--blu-marino);
+      font-weight:    600;
+      padding:        0.6rem 1.25rem;
+      background:     var(--bianco-pietra);
+      border-bottom:  2px solid var(--azzurro-turchese);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <nav class="nav container" aria-label="Navigazione principale">
+    <a href="index.html" class="nav__logo" aria-label="Terme di Equi — Home">
+      <span class="nav__logo-main">Terme di Equi</span>
+      <span class="nav__logo-sub">Centro Benessere</span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="le-terme.html">Le Terme</a></li>
+      <li><a href="trattamenti-e-cure.html">Trattamenti</a></li>
+      <li><a href="prezzi.html" class="active">Prezzi</a></li>
+    </ul>
+    <button class="nav__burger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="nav__mobile" role="dialog" aria-label="Menu mobile">
+  <a href="index.html">Home</a>
+  <a href="le-terme.html">Le Terme</a>
+  <a href="trattamenti-e-cure.html">Trattamenti</a>
+  <a href="prezzi.html">Prezzi & Orari</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-label="Prezzi e Orari Terme di Equi">
+  <div class="page-hero__bg"
+       style="background-image: url('https://res.cloudinary.com/de278ryzj/image/upload/v1773929209/509239014_17894976324251714_6156381106198697081_n_gn0vbx.webp');"
+       role="img" aria-label="Vista aerea delle piscine termali esterne delle Terme di Equi"></div>
+  <div class="container page-hero__content">
+    <h1>Prezzi & Orari</h1>
+  </div>
+</section>
+
+<!-- ORARIO -->
+<div class="orario-banner" role="note" aria-label="Orario di apertura">
+  Orario di apertura <strong>10:00 – 19:00</strong> &mdash; Apertura stagionale da Giugno a Settembre tutti i giorni
+</div>
+
+
+<!-- ═══ INGRESSI ══════════════════════════════════════════════════ -->
+<section class="section bg-turchese" aria-labelledby="h2-ingressi">
+  <div class="container">
+
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="overline">Tariffe ufficiali</span>
+      <h2 id="h2-ingressi">Ingressi Piscine & Parco Termale</h2>
+    </div>
+
+    <!-- GIORNATA INTERA -->
+    <div class="price-block" data-aos="fade-up">
+      <div class="price-block-title">Giornata Intera</div>
+      <table class="price-table cols-2" aria-label="Tariffe giornata intera">
+        <thead>
+          <tr>
+            <th>Tipologia</th>
+            <th>Prezzo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ingresso adulti</td>
+            <td>€ 12,00</td>
+          </tr>
+          <tr>
+            <td>Ingresso bambini (4–11 anni)</td>
+            <td>€ 5,00</td>
+          </tr>
+          <tr>
+            <td>Bambini fino a 3 anni</td>
+            <td style="color:var(--verde-chiaro); font-weight:600;">Gratuito</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MEZZA GIORNATA -->
+    <div class="price-block" data-aos="fade-up">
+      <div class="price-block-title">Mezza Giornata <span style="font-size:1.1rem; font-weight:300;">(dalle ore 15:00)</span></div>
+      <table class="price-table cols-2" aria-label="Tariffe mezza giornata">
+        <thead>
+          <tr>
+            <th>Tipologia</th>
+            <th>Prezzo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ingresso adulti</td>
+            <td>€ 8,00</td>
+          </tr>
+          <tr>
+            <td>Ingresso bambini (4–11 anni)</td>
+            <td>€ 4,00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- POMERIGGIO -->
+    <div class="price-block" data-aos="fade-up">
+      <div class="price-block-title">Pomeriggio <span style="font-size:1.1rem; font-weight:300;">(dalle ore 18:00)</span></div>
+      <table class="price-table cols-2" aria-label="Tariffe pomeriggio">
+        <thead>
+          <tr>
+            <th>Tipologia</th>
+            <th>Prezzo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ingresso adulti</td>
+            <td>€ 4,00</td>
+          </tr>
+          <tr>
+            <td>Ingresso bambini (4–11 anni)</td>
+            <td>€ 3,00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══ ABBONAMENTI ════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="h2-abbonamenti">
+  <div class="container">
+
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="overline">Per i frequentatori abituali</span>
+      <h2 id="h2-abbonamenti">Carnet Ingressi</h2>
+      <p>Risparmia con i carnet multipli. Validi esclusivamente nei giorni feriali.</p>
+    </div>
+
+    <!-- ADULTI -->
+    <div class="price-block" data-aos="fade-up">
+      <div class="price-block-title">Adulti</div>
+      <table class="price-table cols-carnet" aria-label="Carnet adulti">
+        <thead>
+          <tr>
+            <th>Carnet</th>
+            <th>N° ingressi</th>
+            <th>Prezzo</th>
+            <th>Risparmio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Carnet"><strong>Carnet 10</strong></td>
+            <td data-label="Ingressi">10 ingressi</td>
+            <td data-label="Prezzo">€ 80,00</td>
+            <td data-label="Risparmio" style="color:var(--verde-chiaro);">−33%</td>
+          </tr>
+          <tr>
+            <td data-label="Carnet"><strong>Carnet 20</strong></td>
+            <td data-label="Ingressi">20 ingressi</td>
+            <td data-label="Prezzo">€ 140,00</td>
+            <td data-label="Risparmio" style="color:var(--verde-chiaro);">−42%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BAMBINI -->
+    <div class="price-block" data-aos="fade-up">
+      <div class="price-block-title">Bambini (4–11 anni)</div>
+      <table class="price-table cols-carnet" aria-label="Carnet bambini">
+        <thead>
+          <tr>
+            <th>Carnet</th>
+            <th>N° ingressi</th>
+            <th>Prezzo</th>
+            <th>Risparmio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Carnet"><strong>Carnet 10</strong></td>
+            <td data-label="Ingressi">10 ingressi</td>
+            <td data-label="Prezzo">€ 40,00</td>
+            <td data-label="Risparmio" style="color:var(--verde-chiaro);">−20%</td>
+          </tr>
+          <tr>
+            <td data-label="Carnet"><strong>Carnet 20</strong></td>
+            <td data-label="Ingressi">20 ingressi</td>
+            <td data-label="Prezzo">€ 70,00</td>
+            <td data-label="Risparmio" style="color:var(--verde-chiaro);">−30%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- NOTA ABBONAMENTI -->
+<div class="note-abbonamenti" role="note">
+  <strong>Gli abbonamenti sono validi solo nei giorni feriali</strong>
+  Lunedì, Martedì, Mercoledì, Giovedì, Venerdì — esclusi i festivi nazionali
+</div>
+
+
+<!-- ═══ NOLEGGI ════════════════════════════════════════════════════ -->
+<section class="section bg-turchese" aria-labelledby="h2-noleggi">
+  <div class="container">
+
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="overline">Comfort in più</span>
+      <h2 id="h2-noleggi">Noleggi</h2>
+    </div>
+
+    <div class="grid-2" data-aos="fade-up" style="max-width:900px; margin:0 auto;">
+
+      <!-- Singoli -->
+      <div>
+        <div class="price-block-title" style="font-size:1.3rem; margin-bottom:1rem;">Singoli</div>
+        <table class="price-table cols-2" aria-label="Noleggio singoli">
+          <thead>
+            <tr><th>Articolo</th><th>Prezzo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sdraio</td><td>€ 4,00</td></tr>
+            <tr><td>Lettino</td><td>€ 6,00</td></tr>
+            <tr><td>Ombrellone</td><td>€ 5,00</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pacchetti completi -->
+      <div>
+        <div class="price-block-title" style="font-size:1.3rem; margin-bottom:1rem;">Pacchetti completi</div>
+        <table class="price-table cols-2" aria-label="Noleggio pacchetti">
+          <thead>
+            <tr><th>Combinazione</th><th>Prezzo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Ombrellone + Lettino + Sdraio</td><td>€ 11,00</td></tr>
+            <tr><td>Ombrellone + 2 Sdraio</td><td>€ 9,00</td></tr>
+            <tr><td>Ombrellone + 2 Lettini</td><td>€ 13,00</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══ SERVIZI ESTETICI (accordion) ══════════════════════════════ -->
+<section class="section" aria-labelledby="h2-estetica">
+  <div class="container" style="max-width:820px;">
+
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="overline">Su prenotazione</span>
+      <h2 id="h2-estetica">Servizi Estetici</h2>
+      <p>Disponibili su prenotazione. Contattaci per fissare il tuo appuntamento.</p>
+    </div>
+
+    <div data-aos="fade-up">
+      <button class="estetica-toggle" aria-expanded="false" aria-controls="estetica-content" id="estetica-btn">
+        Visualizza listino prezzi estetica
+        <span class="toggle-icon" aria-hidden="true">+</span>
+      </button>
+
+      <div class="estetica-body" id="estetica-content" role="region" aria-labelledby="estetica-btn">
+
+        <!-- CERETTA -->
+        <table class="price-table" aria-label="Prezzi ceretta" style="margin-bottom:1rem;">
+          <thead>
+            <tr>
+              <th colspan="3" class="price-cat-label">Ceretta</th>
+            </tr>
+            <tr>
+              <th>Servizio</th>
+              <th style="text-align:center;">Durata</th>
+              <th>Prezzo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Ceretta mezza gamba</td><td style="text-align:center;">20 min</td><td>€ 18,00</td></tr>
+            <tr><td>Ceretta completa</td><td style="text-align:center;">40 min</td><td>€ 28,00</td></tr>
+            <tr><td>Ceretta ascelle</td><td style="text-align:center;">10 min</td><td>€ 6,00</td></tr>
+            <tr><td>Ceretta braccia</td><td style="text-align:center;">15 min</td><td>€ 10,00</td></tr>
+            <tr><td>Ceretta inguine parziale</td><td style="text-align:center;">15 min</td><td>€ 8,00</td></tr>
+            <tr><td>Ceretta inguine totale</td><td style="text-align:center;">20 min</td><td>€ 10,00</td></tr>
+            <tr><td>Ceretta petto uomo</td><td style="text-align:center;">variabile</td><td>€ 18,00</td></tr>
+            <tr><td>Ceretta schiena uomo</td><td style="text-align:center;">variabile</td><td>€ 18,00</td></tr>
+          </tbody>
+        </table>
+
+        <!-- MANI E PIEDI -->
+        <table class="price-table" aria-label="Prezzi mani e piedi" style="margin-bottom:1rem;">
+          <thead>
+            <tr>
+              <th colspan="3" class="price-cat-label">Mani & Piedi</th>
+            </tr>
+            <tr>
+              <th>Servizio</th>
+              <th style="text-align:center;">Durata</th>
+              <th>Prezzo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Pedicure</td><td style="text-align:center;">30–40 min</td><td>€ 20,00</td></tr>
+            <tr><td>Pedicure curativo</td><td style="text-align:center;">40–50 min</td><td>€ 25,00</td></tr>
+            <tr><td>Manicure estetico</td><td style="text-align:center;">30 min</td><td>€ 15,00</td></tr>
+          </tbody>
+        </table>
+
+        <!-- VISO E MASSAGGI -->
+        <table class="price-table" aria-label="Prezzi viso e massaggi" style="margin-bottom:1rem;">
+          <thead>
+            <tr>
+              <th colspan="3" class="price-cat-label">Viso & Massaggi</th>
+            </tr>
+            <tr>
+              <th>Servizio</th>
+              <th style="text-align:center;">Durata</th>
+              <th>Prezzo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Pulizia viso</td><td style="text-align:center;">60 min</td><td>€ 30,00</td></tr>
+            <tr><td>Massaggio viso</td><td style="text-align:center;">20 min</td><td>€ 15,00</td></tr>
+            <tr><td>Massaggio parziale</td><td style="text-align:center;">30 min</td><td>€ 30,00</td></tr>
+            <tr><td>Massaggio totale</td><td style="text-align:center;">60 min</td><td>€ 50,00</td></tr>
+            <tr><td>Massaggio anticellulite</td><td style="text-align:center;">40 min</td><td>€ 40,00</td></tr>
+            <tr><td>Massaggio rassodante</td><td style="text-align:center;">40 min</td><td>€ 40,00</td></tr>
+            <tr><td>Massaggio parziale piedi</td><td style="text-align:center;">15 min</td><td>€ 15,00</td></tr>
+          </tbody>
+        </table>
+
+        <!-- FANGHI E TRATTAMENTI CORPO -->
+        <table class="price-table" aria-label="Prezzi fanghi e trattamenti corpo" style="margin-bottom:1rem;">
+          <thead>
+            <tr>
+              <th colspan="3" class="price-cat-label">Fanghi & Trattamenti Corpo</th>
+            </tr>
+            <tr>
+              <th>Servizio</th>
+              <th style="text-align:center;">Durata</th>
+              <th>Prezzo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Fango estetico</td><td style="text-align:center;">40 min</td><td>€ 30,00</td></tr>
+            <tr><td>Fanghi e idromassaggio</td><td style="text-align:center;">60 min</td><td>€ 40,00</td></tr>
+            <tr><td>Fanghi e massaggio</td><td style="text-align:center;">60 min</td><td>€ 50,00</td></tr>
+            <tr><td>Scrub corpo totale</td><td style="text-align:center;">60 min</td><td>€ 50,00</td></tr>
+          </tbody>
+        </table>
+
+        <!-- PICCOLI TRATTAMENTI -->
+        <table class="price-table" aria-label="Piccoli trattamenti">
+          <thead>
+            <tr>
+              <th colspan="3" class="price-cat-label">Piccoli Trattamenti</th>
+            </tr>
+            <tr>
+              <th>Servizio</th>
+              <th style="text-align:center;">Durata</th>
+              <th>Prezzo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Sopracciglia</td><td style="text-align:center;">—</td><td>€ 6,00</td></tr>
+            <tr><td>Baffetti</td><td style="text-align:center;">—</td><td>€ 4,00</td></tr>
+          </tbody>
+        </table>
+
+        <div class="info-box" style="margin-top:1.5rem;">
+          <strong>Prenotazioni:</strong> Tel. <a href="tel:0585949339">0585 949339</a> &mdash;
+          E-mail: <a href="mailto:segr.centrobenessereequiterme@yahoo.com">segr.centrobenessereequiterme@yahoo.com</a>
+        </div>
+
+      </div><!-- /estetica-body -->
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══ NOTE ══════════════════════════════════════════════════════ -->
+<section class="section bg-blu" aria-labelledby="h2-note">
+  <div class="container">
+
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="overline" style="color:var(--azzurro-turchese);">Informazioni utili</span>
+      <h2 id="h2-note">Condizioni di accesso</h2>
+    </div>
+
+    <div class="grid-2" data-aos="fade-up">
+      <div>
+        <h3 style="color:white; margin-bottom:1rem;">Orari e fasce</h3>
+        <ul style="display:flex; flex-direction:column; gap:0.75rem; color:rgba(255,255,255,0.75); font-size:0.95rem;">
+          <li><strong style="color:white;">Apertura:</strong> Apertura stagionale da Giugno a Settembretutti i giorni 10:00–19:00</li>
+          <li><strong style="color:white;">Mezza giornata:</strong> dalle ore 15:00</li>
+          <li><strong style="color:white;">Pomeriggio:</strong> dalle ore 18:00</li>
+          <li><strong style="color:white;">Carnet:</strong> validi solo nei giorni feriali (Lun–Ven)</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color:white; margin-bottom:1rem;">Regolamento</h3>
+        <ul style="display:flex; flex-direction:column; gap:0.75rem; color:rgba(255,255,255,0.75); font-size:0.95rem;">
+          <li>L'ingresso comprende accesso a tutte le piscine termali e al parco</li>
+          <li>I minori di 12 anni devono essere sempre accompagnati da un adulto</li>
+          <li>Animali ammessi solo nell'area dedicata con guinzaglio e museruola</li>
+          <li>La struttura si riserva il diritto di chiudere anticipatamente per maltempo</li>
+          <li>Non sono ammessi rimborsi per chiusure dovute a cause di forza maggiore</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="nav__logo">
+          <span class="nav__logo-main">Terme di Equi</span>
+          <span class="nav__logo-sub">Centro Benessere · Fivizzano</span>
+        </a>
+        <p>Un'oasi termale nel cuore della Lunigiana, tra le Alpi Apuane e le Cinque Terre.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigazione</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="le-terme.html">Le Terme & la Storia</a></li>
+          <li><a href="trattamenti-e-cure.html">Trattamenti & Cure</a></li>
+          <li><a href="prezzi.html">Prezzi & Orari</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Prezzi</h4>
+        <ul>
+          <li><a href="#h2-ingressi">Ingressi</a></li>
+          <li><a href="#h2-abbonamenti">Carnet</a></li>
+          <li><a href="#h2-noleggi">Noleggi</a></li>
+          <li><a href="#h2-estetica">Estetica</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contatti</h4>
+        <ul>
+          <li><a href="tel:0585949339">0585 949339</a></li>
+          <li><a href="mailto:centrobenessereequiterme@gmail.com">centrobenessereequiterme@gmail.com</a></li>
+          <li style="color:rgba(255,255,255,0.6);">Via Noce Verde 12, Equi Terme</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2025 Centrobenessere naturale s.r.l. &mdash; P.IVA 01449350451</p>
+      <nav class="footer__legal" aria-label="Link legali">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="note-legali.html">Note Legali</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+<script>
+  // Accordion estetica
+  const btn  = document.getElementById('estetica-btn');
+  const body = document.getElementById('estetica-content');
+  if (btn && body) {
+    btn.addEventListener('click', () => {
+      const open = body.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+      btn.querySelector('.toggle-icon').textContent = open ? '×' : '+';
+    });
+  }
+</script>
+</body>
+</html>
