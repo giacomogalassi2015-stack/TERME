@@ -47,19 +47,17 @@
 <body>
 
 <!-- HEADER -->
-<header class="site-header" role="banner">
+<header class="site-header header-no-hero" role="banner">
   <nav class="nav container" aria-label="Navigazione principale">
     <a href="index.html" class="nav__logo" aria-label="Terme di Equi — Home">
       <span class="nav__logo-main">Terme di Equi</span>
-      <span class="nav__logo-sub">Centro Benessere </span>
+      <span class="nav__logo-sub">Centro Benessere</span>
     </a>
     <ul class="nav__links" role="list">
       <li><a href="index.html">Home</a></li>
-      <li><a href="le-terme.html" class="active">Le Terme</a></li>
+      <li><a href="le-terme.html">Le Terme</a></li>
       <li><a href="trattamenti-e-cure.html">Trattamenti</a></li>
-   
       <li><a href="prezzi.html">Prezzi</a></li>
-
     </ul>
     <button class="nav__burger" aria-label="Apri menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -75,13 +73,52 @@
 
 </div>
 
-<!-- PAGE HERO -->
-<section class="page-hero" aria-label="Le Terme di Equi — Storia e Acque">
-  <div class="page-hero__bg" style="background-image: url('https://res.cloudinary.com/de278ryzj/image/upload/v1773929209/509239014_17894976324251714_6156381106198697081_n_gn0vbx.webp');"
-       role="img" aria-label="Sorgente naturale delle acque termali solfuree di Equi Terme con grotta calcarea"></div>
-  <div class="container page-hero__content">
-    <h1>Le Terme & la Storia</h1>
-   </div>
+
+
+<!-- ═══ TIMELINE STORIA ════════════════════════════════════════════════ -->
+<section class="section bg-blu" aria-labelledby="h2-timeline">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="overline" style="color: var(--azzurro-turchese);">Linea del tempo</span>
+      <h2 id="h2-timeline">145 anni di storia termale</h2>
+    </div>
+    <div style="max-width: 700px; margin: 0 auto; position: relative;" data-aos="fade-up">
+      <div style="position: absolute; left: 2rem; top: 0; bottom: 0; width: 2px; background: rgba(168,216,232,0.3);"></div>
+      <div style="display:flex; flex-direction:column; gap: 2.5rem; padding-left: 5rem;">
+        <div>
+          <div style="position:absolute; left:1rem; width: 2rem; height: 2rem; background: var(--azzurro-turchese); border-radius: 50%; margin-top:0.2rem;"></div>
+          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">Epoca romana</p>
+          <h4 style="color:white; margin-bottom:0.5rem;">Le prime sorgenti</h4>
+          <p>Le popolazioni liguri-apuane e successivamente i Romani sfruttano le acque sulfuree della Valle del Lucido per uso balneoterapico.</p>
+        </div>
+        <div>
+          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">XI secolo</p>
+          <h4 style="color:white; margin-bottom:0.5rem;">Documenti medievali</h4>
+          <p>Le sorgenti appaiono nei documenti del Marchesato Malaspina come "acque sulfuree" di Equi, note per le virtù curative.</p>
+        </div>
+        <div>
+          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">1878</p>
+          <h4 style="color:white; margin-bottom:0.5rem;">Fondazione dello Stabilimento</h4>
+          <p>Apertura del primo stabilimento termale con struttura dedicata. Le terme di Equi diventano una destinazione per la borghesia toscana e ligure.</p>
+        </div>
+        <div>
+          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">Anni '60-'70</p>
+          <h4 style="color:white; margin-bottom:0.5rem;">Il periodo d'oro</h4>
+          <p>Con il boom economico le terme diventano una meta turistica di massa, con migliaia di visitatori annui. Vengono ampliate le piscine e i reparti di cura.</p>
+        </div>
+        <div>
+          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">2024</p>
+          <h4 style="color:white; margin-bottom:0.5rem;">Centro benessere Equi Terme</h4>
+          <p>La gestione passa a Centro benessere Equi Terme s.p.a., che avvia un programma di modernizzazione delle strutture e ampliamento dell'offerta wellness.</p>
+        </div>
+        <div>
+          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;"> Estate 2026 ✨</p>
+          <h4 style="color:white; margin-bottom:0.5rem;">Inaugurazione Nuova SPA</h4>
+          <p>Apertura della nuova area SPA, un nuovo capitolo nella storia delle Terme di Equi sta per essere scritto.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ═══ LE ACQUE ═══════════════════════════════════════════════════════ -->
@@ -147,98 +184,6 @@
 
 </section>
 
-<!-- ═══ TIMELINE STORIA ════════════════════════════════════════════════ -->
-<section class="section bg-blu" aria-labelledby="h2-timeline">
-  <div class="container">
-    <div class="section-header text-center" data-aos="fade-up">
-      <span class="overline" style="color: var(--azzurro-turchese);">Linea del tempo</span>
-      <h2 id="h2-timeline">145 anni di storia termale</h2>
-    </div>
-    <div style="max-width: 700px; margin: 0 auto; position: relative;" data-aos="fade-up">
-      <div style="position: absolute; left: 2rem; top: 0; bottom: 0; width: 2px; background: rgba(168,216,232,0.3);"></div>
-      <div style="display:flex; flex-direction:column; gap: 2.5rem; padding-left: 5rem;">
-        <div>
-          <div style="position:absolute; left:1rem; width: 2rem; height: 2rem; background: var(--azzurro-turchese); border-radius: 50%; margin-top:0.2rem;"></div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">Epoca romana</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Le prime sorgenti</h4>
-          <p>Le popolazioni liguri-apuane e successivamente i Romani sfruttano le acque sulfuree della Valle del Lucido per uso balneoterapico.</p>
-        </div>
-        <div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">XI secolo</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Documenti medievali</h4>
-          <p>Le sorgenti appaiono nei documenti del Marchesato Malaspina come "acque sulfuree" di Equi, note per le virtù curative.</p>
-        </div>
-        <div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">1878</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Fondazione dello Stabilimento</h4>
-          <p>Apertura del primo stabilimento termale con struttura dedicata. Le terme di Equi diventano una destinazione per la borghesia toscana e ligure.</p>
-        </div>
-        <div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">Anni '60-'70</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Il periodo d'oro</h4>
-          <p>Con il boom economico le terme diventano una meta turistica di massa, con migliaia di visitatori annui. Vengono ampliate le piscine e i reparti di cura.</p>
-        </div>
-        <div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">2024</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Centro benessere Equi Terme</h4>
-          <p>La gestione passa a Centro benessere Equi Terme s.p.a., che avvia un programma di modernizzazione delle strutture e ampliamento dell'offerta wellness.</p>
-        </div>
-        <div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;"> Estate 2026 ✨</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Inaugurazione Nuova SPA</h4>
-          <p>Apertura della nuova area SPA, un nuovo capitolo nella storia delle Terme di Equi sta per essere scritto.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══ IL TERRITORIO ══════════════════════════════════════════════════ -->
-<section class="section bg-turchese" aria-labelledby="h2-territorio">
-  <div class="container">
-    <div class="section-header text-center" data-aos="fade-up">
-      <span class="overline">Il contesto naturale</span>
-      <h2 id="h2-territorio">Un territorio di straordinaria bellezza</h2>
-      <p>Equi Terme si trova nella Valle del Lucido, uno dei comprensori più selvaggi e affascinanti delle Alpi Apuane, Parco Regionale della Toscana.</p>
-    </div>
-    <div class="grid-3" data-aos="fade-up">
-      <div class="card">
-        <div class="card__img">
-          <img src="https://res.cloudinary.com/de278ryzj/image/upload/v1773928823/64-1_iheoqk.jpg"
-               alt="Panorama delle Alpi Apuane con vette marmifere viste dalla valle di Equi Terme"
-               width="800" height="600" loading="lazy">
-        </div>
-        <div class="card__body">
-          <h3>Alpi Apuane</h3>
-          <p>Il Parco Regionale delle Alpi Apuane circonda il borgo di Equi. Le stesse rocce dolomitiche e gessose che filtrano e mineralizzano le acque termali plasmano un paesaggio di rara bellezza.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card__img">
-          <img src="https://res.cloudinary.com/de278ryzj/image/upload/v1773928822/Grotte-di-Equi-Terme-Comune-Fivizzano-Cosa-Fare-Natura-Lunigiana-World_2021_43-Copertina_bfw54d.jpg"
-               alt="Interno delle Grotte di Equi Terme con stalattiti e stalagmiti illuminate"
-               width="800" height="600" loading="lazy">
-        </div>
-        <div class="card__body">
-          <h3>Le Grotte di Equi</h3>
-          <p>A pochi passi dalle terme, le Grotte di Equi offrono un percorso sotterraneo mozzafiato tra stalattiti, stalagmiti e resti fossili di orso delle caverne (Ursus spelaeus), un sito unico in Toscana.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card__img">
-          <img src="https://res.cloudinary.com/de278ryzj/image/upload/v1773928822/cinque-terre-express_1x_w43z1y.jpg"
-               alt="Vista sulle Cinque Terre dalla costa ligure, raggiungibili in un'ora dalle Terme di Equi"
-               width="800" height="600" loading="lazy">
-        </div>
-        <div class="card__body">
-          <h3>A un'ora dalle Cinque Terre</h3>
-          <p>La posizione geografica è strategica: a 1 ora dalla costa ligure e dalle Cinque Terre, 40 minuti da Carrara e La Spezia. Un punto di sosta perfetto per un itinerario di benessere e di cultura.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
@@ -272,14 +217,15 @@
       <div class="footer__col">
         <h4>Contatti</h4>
         <ul>
-          <li><a href="tel:0585949339">0585 949339</a></li>
-          <li><a href="mailto:centrobenessereequiterme@gmail.com">centrobenessereequiterme@gmail.com</a></li>
+          <li><a href="tel:3759154083">+39 375 9154083</a></li>
+          <li><a href="tel:0585949339">+39 0585 949339</a></li>
+          <li><a href="mailto:segr.centrobenessereequiterme@yahoo.com">segr.centrobenessereequiterme@yahoo.com</a></li>
           <li style="color:rgba(255,255,255,0.6);">Via Noce Verde 12, Equi Terme</li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© 2025 Terme di Equi centro benessere s.r.l. — P.IVA 01449350451</p>
+      <p>© 2025 Centro Benessere Equi Terme F.G.M - Toscana SRT — P.IVA 01449350451</p>
       <nav class="footer__legal" aria-label="Link legali">
   <a href="privacy-policy.html">Privacy Policy</a>
   <a href="cookie-policy.html">Cookie Policy</a>

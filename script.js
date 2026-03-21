@@ -4,19 +4,20 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ── 1. STICKY HEADER ─────────────────────────────────────────────
-  const header = document.querySelector('.site-header');
-  if (header) {
-    const onScroll = () => {
-      if (window.scrollY > 60) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
+ // ── 1. STICKY HEADER ─────────────────────────────────────────────
+ const header = document.querySelector('.site-header');
+ if (header) {
+   const onScroll = () => {
+     // Aggiunge 'scrolled' se scendi oltre i 60px OPPURE se è una pagina senza Hero
+     if (window.scrollY > 60 || header.classList.contains('header-no-hero')) {
+       header.classList.add('scrolled');
+     } else {
+       header.classList.remove('scrolled');
+     }
+   };
+   window.addEventListener('scroll', onScroll, { passive: true });
+   onScroll(); // Esegue il controllo al caricamento
+ }
 
   // ── 2. MOBILE NAV ────────────────────────────────────────────────
   const burger = document.querySelector('.nav__burger');
