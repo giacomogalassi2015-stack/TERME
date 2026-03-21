@@ -454,31 +454,48 @@ p  { max-width: 70ch; }
   margin:    0 auto;
   position:  relative;
 }
+
+/* Linea verticale: left = metà del padding-left delle entries (4rem) - metà dot (1rem) = 3rem, poi -1px */
 .timeline__line {
   position:   absolute;
-  left:       2rem;
+  left:       3rem;
   top:        0;
   bottom:     0;
   width:      2px;
   background: rgba(168,216,232,0.3);
 }
+
+
+
+/* Lista: reset totale dei marker <ol> */
 .timeline__entries {
+  list-style:     none;
   display:        flex;
   flex-direction: column;
   gap:            2.5rem;
   padding-left:   5rem;
+  margin:         0;
 }
-.timeline__entry { position: relative; }
+
+/* Entry: reset marker nativo */
+.timeline__entry {
+  position:   relative;
+  list-style: none;
+}
+.timeline__entry::marker { content: ''; }
+
+/* Dot: centrato sulla linea (left: 3rem dalla .timeline, entries ha padding-left 5rem, quindi dot va a -(5rem-3rem-1rem) = -3rem) */
 .timeline__dot {
   position:      absolute;
-  left:          -3.25rem;
-  top:           0.2rem;
+  left:          -3rem;
+  top:           0.15rem;
   width:         2rem;
   height:        2rem;
   background:    var(--azzurro-turchese);
   border-radius: 50%;
   flex-shrink:   0;
 }
+
 .timeline__label {
   color:          var(--azzurro-turchese);
   font-size:      0.8rem;
@@ -488,9 +505,10 @@ p  { max-width: 70ch; }
   margin-bottom:  0.25rem;
   display:        block;
 }
-.timeline__entry h4 {
+.timeline__entry h3 {
   color:         white;
   margin-bottom: 0.5rem;
+  font-size:     1.4rem;
 }
 .timeline__entry p {
   color: rgba(255,255,255,0.75);
@@ -924,9 +942,11 @@ header.site-header.header-no-hero .nav__burger span {
   .tratt-hero-card           { flex-direction: column; }
   .tratt-detail              { grid-template-columns: 1fr; }
 
-  /* Timeline */
+  /* Timeline mobile: linea più a sinistra, dot più piccolo */
+  .timeline__line            { left: 1.5rem; }
   .timeline__entries         { padding-left: 3.5rem; }
-  .timeline__dot             { left: -2.5rem; width: 1.5rem; height: 1.5rem; }
+  .timeline__dot             { left: -2.75rem; width: 1.5rem; height: 1.5rem; top: 0.2rem; }
+  .timeline__line::after     { width: 0.85rem; height: 0.85rem; }
 
   /* Legali */
   .legal-page                { padding: 3rem 0 4rem; }
