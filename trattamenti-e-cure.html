@@ -4,14 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Trattamenti & Cure Termali | Terme di Equi</title>
-  <meta name="description" content="Cure termali a Equi Terme: inalazioni, fangoterapia, balneoterapiae trattamenti viso. Terapisti qualificati, ambiente naturale.">
+  <!-- Preload font critici -->
+  <link rel="preload" href="fonts/CormorantGaramond-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Jost-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+
+  <title>Trattamenti &amp; Cure Termali | Terme di Equi</title>
+  <meta name="description" content="Cure termali a Equi Terme: inalazioni, fangoterapia, balneoterapia e trattamenti viso. Terapisti qualificati, ambiente naturale.">
   <meta name="keywords" content="cure termali Equi, inalazioni termali Fivizzano, fangoterapia solfurea, trattamenti benessere Toscana">
   <link rel="canonical" href="https://www.termediequi.com/trattamenti-e-cure.html">
   <link rel="alternate" hreflang="it" href="https://www.termediequi.com/trattamenti-e-cure.html">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Cure Termali & Trattamenti Benessere — Terme di Equi">
+  <meta property="og:title" content="Cure Termali &amp; Trattamenti Benessere — Terme di Equi">
   <meta property="og:description" content="Inalazioni, fanghi terapeutici, rituali benessere alle Terme di Equi, Fivizzano.">
   <meta property="og:url" content="https://www.termediequi.com/trattamenti-e-cure.html">
   <meta property="og:image" content="https://res.cloudinary.com/terme-equi/image/upload/w_1200,c_fill,f_auto,q_auto:eco/og-trattamenti.jpg">
@@ -47,39 +51,6 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-  <style>
-    .tratt-hero-card {
-      background: var(--bianco-puro);
-      border-radius: var(--radius-md);
-      padding: 2rem;
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-      transition: var(--transition);
-    }
-    .tratt-hero-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-deep); }
-    .tratt-hero-card__icon { font-size: 2.5rem; flex-shrink: 0; }
-    .tratt-hero-card h3 { margin-bottom: 0.5rem; font-size: 1.3rem; }
-    .tratt-hero-card p { font-size: 0.92rem; color: var(--grigio-caldo); margin-bottom: 0.75rem; }
-    .tratt-detail {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .tratt-detail-item {
-      background: var(--azzurro-pallido);
-      border-radius: var(--radius-sm);
-      padding: 0.75rem 1rem;
-      font-size: 0.85rem;
-    }
-    .tratt-detail-item strong { display: block; color: var(--blu-cobalto); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
-    @media (max-width: 768px) {
-      .tratt-hero-card { flex-direction: column; }
-      .tratt-detail { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
 <body>
 
@@ -93,24 +64,23 @@
     <ul class="nav__links" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="le-terme.html">Le Terme</a></li>
-      <li><a href="trattamenti-e-cure.html">Trattamenti</a></li>
+      <li><a href="trattamenti-e-cure.html" aria-current="page">Trattamenti</a></li>
       <li><a href="prezzi.html">Prezzi</a></li>
     </ul>
-    <button class="nav__burger" aria-label="Apri menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="nav__burger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-nav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
   </nav>
 </header>
 
-<div class="nav__mobile" role="dialog" aria-label="Menu mobile">
+<nav id="mobile-nav" class="nav__mobile" role="dialog" aria-label="Menu di navigazione mobile" aria-hidden="true">
   <a href="index.html">Home</a>
   <a href="le-terme.html">Le Terme</a>
   <a href="trattamenti-e-cure.html">Trattamenti</a>
-
-  <a href="prezzi.html">Prezzi & Orari</a>
-
-</div>
-
+  <a href="prezzi.html">Prezzi &amp; Orari</a>
+</nav>
 
 <!-- ═══ CURE TERMALI ═══════════════════════════════════════════════════ -->
 <section class="section" id="cure-termali" aria-labelledby="h2-cure">
@@ -122,157 +92,218 @@
     </div>
 
     <!-- Inalazioni -->
-    <div id="inalazioni" style="scroll-margin-top: 120px;">
-      <h3 style="margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--azzurro-turchese);" data-aos="fade-up">
-         Inalazioni & Aerosol Termali
-      </h3>
-      <div class="grid-2" style="margin-bottom: 3rem;" data-aos="fade-up">
-        <div class="tratt-hero-card">
-         
+    <div id="inalazioni" class="tratt-anchor">
+      <h3 class="tratt-section-title" data-aos="fade-up">Inalazioni &amp; Aerosol Termali</h3>
+      <div class="grid-2" data-aos="fade-up">
+
+        <article class="tratt-hero-card">
           <div>
-            <h3>Inalazioni Dirette</h3>
+            <h4>Inalazioni Dirette</h4>
             <p>Il paziente respira vapori di acqua termale solfurea vaporizzata direttamente attraverso maschere specifiche per naso e bocca. Ideale per riniti, sinusiti croniche e faringiti.</p>
-            <div class="tratt-detail">
-              <div class="tratt-detail-item"><strong>Durata</strong>15 minuti per seduta</div>
-              <div class="tratt-detail-item"><strong>Ciclo consigliato</strong>12 sedute in 2 settimane</div>
-        
-              <div class="tratt-detail-item"><strong>Indicazioni</strong>Riniti, sinusiti, laringiti</div>
-            </div>
+            <dl class="tratt-detail">
+              <div class="tratt-detail-item">
+                <dt><strong>Durata</strong></dt>
+                <dd>15 minuti per seduta</dd>
+              </div>
+              <div class="tratt-detail-item">
+                <dt><strong>Ciclo consigliato</strong></dt>
+                <dd>12 sedute in 2 settimane</dd>
+              </div>
+              <div class="tratt-detail-item">
+                <dt><strong>Indicazioni</strong></dt>
+                <dd>Riniti, sinusiti, laringiti</dd>
+              </div>
+            </dl>
           </div>
-        </div>
-        <div class="tratt-hero-card">
-        
+        </article>
+
+        <article class="tratt-hero-card">
           <div>
-            <h3>Aerosol Termale</h3>
+            <h4>Aerosol Termale</h4>
             <p>Nebulizzazione dell'acqua termale in particelle ultrafini che raggiungono le vie aeree inferiori. Particolarmente efficace per bronchiti ricorrenti, asma lieve e otiti nei bambini.</p>
-            <div class="tratt-detail">
-              <div class="tratt-detail-item"><strong>Durata</strong>15-20 minuti</div>
-              <div class="tratt-detail-item"><strong>Ciclo consigliato</strong>12-18 sedute</div>
- 
-              <div class="tratt-detail-item"><strong>Indicazioni</strong>Asma e BPCO lieve</div>
-            </div>
+            <dl class="tratt-detail">
+              <div class="tratt-detail-item">
+                <dt><strong>Durata</strong></dt>
+                <dd>15–20 minuti</dd>
+              </div>
+              <div class="tratt-detail-item">
+                <dt><strong>Ciclo consigliato</strong></dt>
+                <dd>12–18 sedute</dd>
+              </div>
+              <div class="tratt-detail-item">
+                <dt><strong>Indicazioni</strong></dt>
+                <dd>Asma e BPCO lieve</dd>
+              </div>
+            </dl>
           </div>
-        </div>
-        <div class="tratt-hero-card">
-       
+        </article>
+
+        <article class="tratt-hero-card">
           <div>
-            <h3>Insufflazioni Tubariche</h3>
+            <h4>Insufflazioni Tubariche</h4>
             <p>Trattamento specifico per le tube di Eustachio e l'orecchio medio. Indicato per otiti sieromedie, ipoacusia da catarro e disfunzioni tubariche, particolarmente nei bambini.</p>
-            <div class="tratt-detail">
-              <div class="tratt-detail-item"><strong>Durata</strong>10-15 minuti</div>
-              <div class="tratt-detail-item"><strong>Ciclo consigliato</strong>12 sedute</div>
-           
-              <div class="tratt-detail-item"><strong>Indicazioni</strong>Otiti, ipoacusia, catarro</div>
-            </div>
+            <dl class="tratt-detail">
+              <div class="tratt-detail-item">
+                <dt><strong>Durata</strong></dt>
+                <dd>10–15 minuti</dd>
+              </div>
+              <div class="tratt-detail-item">
+                <dt><strong>Ciclo consigliato</strong></dt>
+                <dd>12 sedute</dd>
+              </div>
+              <div class="tratt-detail-item">
+                <dt><strong>Indicazioni</strong></dt>
+                <dd>Otiti, ipoacusia, catarro</dd>
+              </div>
+            </dl>
           </div>
-        </div>
-        <div class="tratt-hero-card">
-     
+        </article>
+
+        <article class="tratt-hero-card">
           <div>
-            <h3>Humage & Idropneumoterapia</h3>
+            <h4>Humage &amp; Idropneumoterapia</h4>
             <p>Tecnica avanzata che combina umidificazione delle prime vie aeree con micronebulizzazione termale. Indicata per riniti atrofiche, ozena e trattamento post-operatorio ORL.</p>
-            <div class="tratt-detail">
-              <div class="tratt-detail-item"><strong>Durata</strong>20 minuti</div>
-              <div class="tratt-detail-item"><strong>Ciclo consigliato</strong>12-18 sedute</div>
-   
-              <div class="tratt-detail-item"><strong>Indicazioni</strong>Patologie croniche ORL</div>
-            </div>
+            <dl class="tratt-detail">
+              <div class="tratt-detail-item">
+                <dt><strong>Durata</strong></dt>
+                <dd>20 minuti</dd>
+              </div>
+              <div class="tratt-detail-item">
+                <dt><strong>Ciclo consigliato</strong></dt>
+                <dd>12–18 sedute</dd>
+              </div>
+              <div class="tratt-detail-item">
+                <dt><strong>Indicazioni</strong></dt>
+                <dd>Patologie croniche ORL</dd>
+              </div>
+            </dl>
           </div>
-        </div>
+        </article>
+
       </div>
     </div>
 
-    <!-- Fanghi -->
-    <div id="fanghi" style="scroll-margin-top: 120px;">
-      <h3 style="margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--azzurro-turchese);" data-aos="fade-up">
-         Balneoterapia
-      </h3>
-      <div class="grid-2" style="margin-bottom: 3rem;" data-aos="fade-up">
-        <div class="tratt-hero-card">
-      
-         
+    <!-- Balneoterapia -->
+    <div id="fanghi" class="tratt-anchor tratt-anchor--spaced">
+      <h3 class="tratt-section-title" data-aos="fade-up">Balneoterapia</h3>
+      <div class="grid-2" data-aos="fade-up">
+
+        <article class="tratt-hero-card">
           <div>
-            <h3>Balneoterapia Termale</h3>
-            <p>Immersione in vasca con acqua termale solfurea a 36-38°C, arricchita con sali termali. Favorisce il rilassamento muscolare, migliora la circolazione periferica e ha effetti antinfiammatori sull'apparato articolare.</p>
-            <div class="tratt-detail">
-              <div class="tratt-detail-item"><strong>Durata</strong>20-25 minuti</div>
-              <div class="tratt-detail-item"><strong>Ciclo consigliato</strong>12 sedute</div>
-            
-              <div class="tratt-detail-item"><strong>Indicazioni</strong>Artropatie, disturbi vascolari</div>
-            </div>
+            <h4>Balneoterapia Termale</h4>
+            <p>Immersione in vasca con acqua termale solfurea a 36–38 °C, arricchita con sali termali. Favorisce il rilassamento muscolare, migliora la circolazione periferica e ha effetti antinfiammatori sull'apparato articolare.</p>
+            <dl class="tratt-detail">
+              <div class="tratt-detail-item">
+                <dt><strong>Durata</strong></dt>
+                <dd>20–25 minuti</dd>
+              </div>
+              <div class="tratt-detail-item">
+                <dt><strong>Ciclo consigliato</strong></dt>
+                <dd>12 sedute</dd>
+              </div>
+              <div class="tratt-detail-item">
+                <dt><strong>Indicazioni</strong></dt>
+                <dd>Artropatie, disturbi vascolari</dd>
+              </div>
+            </dl>
           </div>
-        </div>
+        </article>
+
       </div>
     </div>
 
+  </div>
 </section>
 
-
-
 <!-- ═══ TRATTAMENTI VISO ════════════════════════════════════════════════ -->
-<section class="section" id="viso" aria-labelledby="h2-viso" style="scroll-margin-top: 80px;">
+<section class="section" id="viso" aria-labelledby="h2-viso">
   <div class="container">
     <div class="section-header" data-aos="fade-up">
       <span class="overline">Bellezza naturale</span>
       <h2 id="h2-viso">Trattamenti Viso</h2>
       <p>Protocolli estetici professionali che combinano l'azione purificante e mineralizzante dell'acqua termale con prodotti cosmetici naturali di alta qualità.</p>
     </div>
+
     <div class="grid-2" data-aos="fade-up">
-      <div class="tratt-hero-card">
-   
+
+      <article class="tratt-hero-card">
         <div>
           <h3>Viso Purificante Termale</h3>
           <p>Trattamento viso completo: pulizia profonda, vapore termale per aprire i pori, maschera detox allo zolfo termale, siero idratante.</p>
-          <div class="tratt-detail">
-            <div class="tratt-detail-item"><strong>Durata</strong>60 minuti</div>
-            <div class="tratt-detail-item"><strong>Ideale per</strong>Pelle mista/acneica</div>
-          </div>
+          <dl class="tratt-detail">
+            <div class="tratt-detail-item">
+              <dt><strong>Durata</strong></dt>
+              <dd>60 minuti</dd>
+            </div>
+            <div class="tratt-detail-item">
+              <dt><strong>Ideale per</strong></dt>
+              <dd>Pelle mista/acneica</dd>
+            </div>
+          </dl>
         </div>
-      </div>
-      <div class="tratt-hero-card">
+      </article>
 
+      <article class="tratt-hero-card">
         <div>
           <h3>Idratazione Intensiva</h3>
           <p>Trattamento rimpolpante con acido ialuronico e minerali termali: contrasta la disidratazione, riduce linee sottili e dona un aspetto fresco e luminoso.</p>
-          <div class="tratt-detail">
-            <div class="tratt-detail-item"><strong>Durata</strong>50 minuti</div>
-            <div class="tratt-detail-item"><strong>Ideale per</strong>Pelle secca/matura</div>
-          </div>
+          <dl class="tratt-detail">
+            <div class="tratt-detail-item">
+              <dt><strong>Durata</strong></dt>
+              <dd>50 minuti</dd>
+            </div>
+            <div class="tratt-detail-item">
+              <dt><strong>Ideale per</strong></dt>
+              <dd>Pelle secca/matura</dd>
+            </div>
+          </dl>
         </div>
-      </div>
-      <div class="tratt-hero-card">
+      </article>
 
+      <article class="tratt-hero-card">
         <div>
           <h3>Peeling Enzimatico</h3>
           <p>Esfoliazione con enzimi vegetali e acque termali per rinnovare lo strato superficiale della cute e stimolare la produzione di collagene.</p>
-          <div class="tratt-detail">
-            <div class="tratt-detail-item"><strong>Durata</strong>45 minuti</div>
-            <div class="tratt-detail-item"><strong>Ideale per</strong>Tutti i tipi di pelle</div>
-          </div>
+          <dl class="tratt-detail">
+            <div class="tratt-detail-item">
+              <dt><strong>Durata</strong></dt>
+              <dd>45 minuti</dd>
+            </div>
+            <div class="tratt-detail-item">
+              <dt><strong>Ideale per</strong></dt>
+              <dd>Tutti i tipi di pelle</dd>
+            </div>
+          </dl>
         </div>
-      </div>
-      <div class="tratt-hero-card">
+      </article>
 
+      <article class="tratt-hero-card">
         <div>
           <h3>Trattamento Contorno Occhi</h3>
           <p>Focus specifico sulla zona perioculare: patch idrogel e siero specifico per ridurre occhiaie, borse e zampe di gallina. Ideale pre-evento.</p>
-          <div class="tratt-detail">
-            <div class="tratt-detail-item"><strong>Durata</strong>30 minuti</div>
-            <div class="tratt-detail-item"><strong>Aggiuntivo</strong>Add-on per qualsiasi viso</div>
-          </div>
+          <dl class="tratt-detail">
+            <div class="tratt-detail-item">
+              <dt><strong>Durata</strong></dt>
+              <dd>30 minuti</dd>
+            </div>
+            <div class="tratt-detail-item">
+              <dt><strong>Aggiuntivo</strong></dt>
+              <dd>Add-on per qualsiasi viso</dd>
+            </div>
+          </dl>
         </div>
-      </div>
+      </article>
+
     </div>
   </div>
 </section>
-
 
 <!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo">
+        <a href="index.html" class="nav__logo" aria-label="Terme di Equi — Home">
           <span class="nav__logo-main">Terme di Equi</span>
           <span class="nav__logo-sub">Centro Benessere · Fivizzano</span>
         </a>
@@ -282,42 +313,38 @@
         <h4>Navigazione</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="le-terme.html">Le Terme & la Storia</a></li>
-          <li><a href="trattamenti-e-cure.html">Trattamenti & Cure</a></li>
-     
-          <li><a href="prezzi.html">Prezzi & Orari</a></li>
-
+          <li><a href="le-terme.html">Le Terme &amp; la Storia</a></li>
+          <li><a href="trattamenti-e-cure.html">Trattamenti &amp; Cure</a></li>
+          <li><a href="prezzi.html">Prezzi &amp; Orari</a></li>
         </ul>
       </div>
       <div class="footer__col">
-         <h4>Trattamenti</h4>
+        <h4>Trattamenti</h4>
         <ul>
           <li><a href="trattamenti-e-cure.html#inalazioni">Inalazioni Termali</a></li>
           <li><a href="trattamenti-e-cure.html#viso">Trattamenti Viso</a></li>
         </ul>
       </div>
-       <div class="footer__col">
+      <div class="footer__col">
         <h4>Contatti</h4>
         <ul>
-          <li><a href="tel:3759154083">+39 375 9154083</a></li>
-          <li><a href="tel:0585949339">+39 0585 949339</a></li>
+          <li><a href="tel:+393759154083">+39 375 9154083</a></li>
+          <li><a href="tel:+390585949339">+39 0585 949339</a></li>
           <li><a href="mailto:segr.centrobenessereequiterme@yahoo.com">segr.centrobenessereequiterme@yahoo.com</a></li>
-          <li style="color:rgba(255,255,255,0.6);">Via Noce Verde 12, Equi Terme</li>
+          <li>Via Noce Verde 12, Equi Terme</li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
       <p>© 2025 Centro Benessere Equi Terme F.G.M - Toscana SRT — P.IVA 01449350451</p>
       <nav class="footer__legal" aria-label="Link legali">
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="cookie-policy.html">Cookie Policy</a>
-  <a href="note-legali.html">Note Legali</a>
-</nav>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="note-legali.html">Note Legali</a>
+      </nav>
     </div>
   </div>
 </footer>
-
-
 
 <script src="script.js" defer></script>
 </body>

@@ -4,102 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Preload font critici -->
+  <link rel="preload" href="fonts/CormorantGaramond-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Jost-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+
+  <!-- noindex: le pagine legali non devono competere con le pagine principali -->
+  <meta name="robots" content="noindex, follow">
+
   <title>Privacy Policy | Terme di Equi — Centro Benessere</title>
   <meta name="description" content="Informativa sulla privacy ai sensi del Regolamento UE 2016/679 (GDPR) del Terme di Equi centro benessere, Fivizzano (MS).">
-  <link rel="canonical" href="https://www.termeequi.com/privacy-policy.html">
+  <link rel="canonical" href="https://www.termediequi.com/privacy-policy.html">
 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-
-  <style>
-    /* ── Layout pagine legali ── */
-    .legal-page { padding: 5rem 0 6rem; }
-    .legal-page .container { max-width: 820px; }
-
-    .legal-header {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 2px solid var(--azzurro-turchese);
-    }
-    .legal-header h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.5rem; }
-    .legal-header .legal-meta {
-      font-size:      0.8rem;
-      color:          var(--grigio-caldo);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .legal-section { margin-bottom: 2.5rem; }
-    .legal-section h2 {
-      font-size:     1.6rem;
-      margin-bottom: 0.75rem;
-      padding-left:  1rem;
-      border-left:   3px solid var(--azzurro-turchese);
-      color:         var(--blu-marino);
-    }
-    .legal-section h3 {
-      font-size:     1.15rem;
-      margin: 1.25rem 0 0.4rem;
-      color:  var(--blu-cobalto);
-    }
-    .legal-section p {
-      font-size:   0.95rem;
-      color:       var(--grigio-scuro);
-      margin-bottom: 0.75rem;
-      max-width:   100%;
-    }
-    .legal-section ul {
-      list-style:   disc;
-      padding-left: 1.5rem;
-      display:      flex;
-      flex-direction: column;
-      gap:          0.4rem;
-      font-size:    0.95rem;
-      color:        var(--grigio-scuro);
-      margin-bottom: 0.75rem;
-    }
-    .legal-table {
-      width:           100%;
-      border-collapse: collapse;
-      font-size:       0.88rem;
-      margin:          1rem 0 1.25rem;
-      background:      var(--bianco-puro);
-      border-radius:   var(--radius-md);
-      overflow:        hidden;
-      box-shadow:      var(--shadow-soft);
-    }
-    .legal-table thead tr { background: var(--blu-cobalto); color: var(--bianco-puro); }
-    .legal-table th,
-    .legal-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .legal-table th { font-weight: 500; letter-spacing: 0.08em; font-size: 0.78rem; text-transform: uppercase; }
-    .legal-table tbody tr:last-child td { border-bottom: none; }
-    .legal-table tbody tr:hover { background: var(--azzurro-pallido); }
-
-    .placeholder {
-      background:    rgba(201,168,76,0.15);
-      color:         #8B6914;
-      padding:       0.1rem 0.4rem;
-      border-radius: 3px;
-      font-weight:   500;
-      font-style:    normal;
-    }
-    .contact-box {
-      background:   var(--azzurro-pallido);
-      border-left:  3px solid var(--blu-cobalto);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding:      1.25rem 1.5rem;
-      margin-top:   1rem;
-      font-size:    0.92rem;
-    }
-    .contact-box strong { color: var(--blu-cobalto); display: block; margin-bottom: 0.4rem; }
-
-    @media (max-width: 768px) {
-      .legal-page { padding: 3rem 0 4rem; }
-      .legal-table { font-size: 0.8rem; }
-      .legal-table th,
-      .legal-table td { padding: 0.6rem 0.75rem; }
-    }
-  </style>
 </head>
 <body>
 
@@ -116,27 +33,29 @@
       <li><a href="trattamenti-e-cure.html">Trattamenti</a></li>
       <li><a href="prezzi.html">Prezzi</a></li>
     </ul>
-    <button class="nav__burger" aria-label="Apri menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="nav__burger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-nav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
   </nav>
 </header>
 
-<div class="nav__mobile" role="dialog" aria-label="Menu mobile">
+<nav id="mobile-nav" class="nav__mobile" role="dialog" aria-label="Menu di navigazione mobile" aria-hidden="true">
   <a href="index.html">Home</a>
   <a href="le-terme.html">Le Terme</a>
   <a href="trattamenti-e-cure.html">Trattamenti</a>
-  <a href="prezzi.html">Prezzi & Orari</a>
-</div>
+  <a href="prezzi.html">Prezzi &amp; Orari</a>
+</nav>
 
 <!-- CONTENUTO LEGALE -->
-<main class="legal-page" style="margin-top: 80px;">
+<main class="legal-page">
   <div class="container">
 
     <div class="legal-header">
       <span class="overline">Documento legale</span>
       <h1>Privacy Policy</h1>
-      <p class="legal-meta">Informativa ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR) &mdash; Ultimo aggiornamento: <span class="placeholder">20/03/2026</span></p>
+      <p class="legal-meta">Informativa ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR) — Ultimo aggiornamento: <em class="legal-meta-highlight">20/03/2026</em></p>
     </div>
 
     <!-- 1. Titolare -->
@@ -148,7 +67,7 @@
         Via Noce Verde 12, Equi Terme, 54013 Fivizzano (MS) — Italia<br>
         P.IVA: 01449350451<br>
         E-mail: <a href="mailto:centrobenessereequiterme@gmail.com">centrobenessereequiterme@gmail.com</a><br>
-        Telefono: <a href="tel:0585949339">0585 949339</a>
+        Telefono: <a href="tel:+390585949339">0585 949339</a>
       </div>
     </div>
 
@@ -164,9 +83,9 @@
       <p>Il sito non dispone di moduli di contatto online o form di registrazione. I dati personali comunicati volontariamente (es. via e-mail o telefono) sono trattati esclusivamente per rispondere alla richiesta dell'utente.</p>
 
       <h3>2.3 Dati provenienti da servizi di terze parti</h3>
-<p>Le immagini del sito sono ospitate su <strong>Cloudinary</strong> (Cloudinary Ltd.). Il caricamento delle immagini avviene tramite CDN e comporta la trasmissione dell'indirizzo IP dell'utente ai server Cloudinary esclusivamente per finalità tecniche di erogazione del servizio. Nessun cookie di profilazione viene depositato. Per maggiori informazioni: <a href="https://cloudinary.com/privacy" target="_blank" rel="noopener">cloudinary.com/privacy</a>.</p>
-<p>Il sito non utilizza Google Fonts tramite CDN esterna. I font tipografici sono interamente self-hosted e non comportano alcun trasferimento di dati verso terze parti.</p>
-   </div>
+      <p>Le immagini del sito sono ospitate su <strong>Cloudinary</strong> (Cloudinary Ltd.). Il caricamento delle immagini avviene tramite CDN e comporta la trasmissione dell'indirizzo IP dell'utente ai server Cloudinary esclusivamente per finalità tecniche di erogazione del servizio. Nessun cookie di profilazione viene depositato. Per maggiori informazioni: <a href="https://cloudinary.com/privacy" target="_blank" rel="noopener noreferrer">cloudinary.com/privacy</a>.</p>
+      <p>Il sito non utilizza Google Fonts tramite CDN esterna. I font tipografici sono interamente self-hosted e non comportano alcun trasferimento di dati verso terze parti.</p>
+    </div>
 
     <!-- 3. Finalità e basi giuridiche -->
     <div class="legal-section">
@@ -174,9 +93,9 @@
       <table class="legal-table" aria-label="Finalità del trattamento">
         <thead>
           <tr>
-            <th>Finalità</th>
-            <th>Base giuridica</th>
-            <th>Periodo conservazione</th>
+            <th scope="col">Finalità</th>
+            <th scope="col">Base giuridica</th>
+            <th scope="col">Periodo conservazione</th>
           </tr>
         </thead>
         <tbody>
@@ -195,7 +114,6 @@
             <td>Obbligo legale (art. 6.1.c GDPR)</td>
             <td>10 anni (obbligo di legge)</td>
           </tr>
-         
         </tbody>
       </table>
     </div>
@@ -210,8 +128,7 @@
     <!-- 5. Trasferimento dati -->
     <div class="legal-section">
       <h2>5. Trasferimento dei dati verso Paesi terzi</h2>
-<p>Il sito non effettua trasferimenti di dati personali verso Paesi terzi extra-UE. I font tipografici sono self-hosted sul server proprio. L'unico servizio esterno utilizzato è Cloudinary Ltd., con sede nel Regno Unito, paese che beneficia di una decisione di adeguatezza della Commissione Europea.</p>
-
+      <p>Il sito non effettua trasferimenti di dati personali verso Paesi terzi extra-UE. I font tipografici sono self-hosted sul server proprio. L'unico servizio esterno utilizzato è Cloudinary Ltd., con sede nel Regno Unito, paese che beneficia di una decisione di adeguatezza della Commissione Europea.</p>
     </div>
 
     <!-- 6. Diritti degli interessati -->
@@ -233,7 +150,7 @@
         E-mail: <a href="mailto:centrobenessereequiterme@gmail.com">centrobenessereequiterme@gmail.com</a><br>
         Il Titolare risponderà entro 30 giorni dalla ricezione della richiesta.
       </div>
-      <p style="margin-top:1rem;">L'interessato ha inoltre il diritto di proporre reclamo all'Autorità Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>), Piazza Venezia 11, 00187 Roma.</p>
+      <p>L'interessato ha inoltre il diritto di proporre reclamo all'Autorità Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">www.garanteprivacy.it</a>), Piazza Venezia 11, 00187 Roma.</p>
     </div>
 
     <!-- 7. Modifiche -->
@@ -250,7 +167,7 @@
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo">
+        <a href="index.html" class="nav__logo" aria-label="Terme di Equi — Home">
           <span class="nav__logo-main">Terme di Equi</span>
           <span class="nav__logo-sub">Centro Benessere · Fivizzano</span>
         </a>
@@ -260,24 +177,23 @@
         <h4>Navigazione</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="le-terme.html">Le Terme & la Storia</a></li>
-          <li><a href="trattamenti-e-cure.html">Trattamenti & Cure</a></li>
-          <li><a href="prezzi.html">Prezzi & Orari</a></li>
+          <li><a href="le-terme.html">Le Terme &amp; la Storia</a></li>
+          <li><a href="trattamenti-e-cure.html">Trattamenti &amp; Cure</a></li>
+          <li><a href="prezzi.html">Prezzi &amp; Orari</a></li>
         </ul>
       </div>
-    
       <div class="footer__col">
         <h4>Contatti</h4>
         <ul>
-          <li><a href="tel:3759154083">+39 375 9154083</a></li>
-          <li><a href="tel:0585949339">+39 0585 949339</a></li>
+          <li><a href="tel:+393759154083">+39 375 9154083</a></li>
+          <li><a href="tel:+390585949339">+39 0585 949339</a></li>
           <li><a href="mailto:segr.centrobenessereequiterme@yahoo.com">segr.centrobenessereequiterme@yahoo.com</a></li>
-          <li style="color:rgba(255,255,255,0.6);">Via Noce Verde 12, Equi Terme</li>
+          <li>Via Noce Verde 12, Equi Terme</li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>&copy; 2025 Centro Benessere Equi Terme F.G.M - Toscana SRT &mdash; P.IVA 01449350451</p>
+      <p>© 2025 Centro Benessere Equi Terme F.G.M - Toscana SRT — P.IVA 01449350451</p>
       <nav class="footer__legal" aria-label="Link legali">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="cookie-policy.html">Cookie Policy</a>

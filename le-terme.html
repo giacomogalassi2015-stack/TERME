@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Preload font critici -->
+  <link rel="preload" href="fonts/CormorantGaramond-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Jost-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+
   <title>Le Terme di Equi: Storia e Acque Solfuree | Fivizzano (MS)</title>
   <meta name="description" content="Scopri la storia delle Terme di Equi, le proprietà curative delle acque solfuree bicarbonato-calciche e i benefici terapeutici riconosciuti dal Ministero della Salute.">
   <meta name="keywords" content="storia terme Equi, acque solfuree Lunigiana, acque termali bicarbonato-calciche, benefici acque termali, terme storiche Toscana">
@@ -55,68 +59,80 @@
     </a>
     <ul class="nav__links" role="list">
       <li><a href="index.html">Home</a></li>
-      <li><a href="le-terme.html">Le Terme</a></li>
+      <li><a href="le-terme.html" aria-current="page">Le Terme</a></li>
       <li><a href="trattamenti-e-cure.html">Trattamenti</a></li>
       <li><a href="prezzi.html">Prezzi</a></li>
     </ul>
-    <button class="nav__burger" aria-label="Apri menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="nav__burger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-nav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
   </nav>
 </header>
-<div class="nav__mobile" role="dialog" aria-label="Menu mobile">
+
+<nav id="mobile-nav" class="nav__mobile" role="dialog" aria-label="Menu di navigazione mobile" aria-hidden="true">
   <a href="index.html">Home</a>
   <a href="le-terme.html">Le Terme</a>
   <a href="trattamenti-e-cure.html">Trattamenti</a>
-
-  <a href="prezzi.html">Prezzi & Orari</a>
-
-</div>
-
-
+  <a href="prezzi.html">Prezzi &amp; Orari</a>
+</nav>
 
 <!-- ═══ TIMELINE STORIA ════════════════════════════════════════════════ -->
 <section class="section bg-blu" aria-labelledby="h2-timeline">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
-      <span class="overline" style="color: var(--azzurro-turchese);">Linea del tempo</span>
+      <span class="overline overline--light">Linea del tempo</span>
       <h2 id="h2-timeline">145 anni di storia termale</h2>
     </div>
-    <div style="max-width: 700px; margin: 0 auto; position: relative;" data-aos="fade-up">
-      <div style="position: absolute; left: 2rem; top: 0; bottom: 0; width: 2px; background: rgba(168,216,232,0.3);"></div>
-      <div style="display:flex; flex-direction:column; gap: 2.5rem; padding-left: 5rem;">
-        <div>
-          <div style="position:absolute; left:1rem; width: 2rem; height: 2rem; background: var(--azzurro-turchese); border-radius: 50%; margin-top:0.2rem;"></div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">Epoca romana</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Le prime sorgenti</h4>
+
+    <div class="timeline" data-aos="fade-up">
+      <div class="timeline__line" aria-hidden="true"></div>
+      <ol class="timeline__entries" aria-label="Cronologia storica delle Terme di Equi">
+
+        <li class="timeline__entry">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <span class="timeline__label">Epoca romana</span>
+          <h3>Le prime sorgenti</h3>
           <p>Le popolazioni liguri-apuane e successivamente i Romani sfruttano le acque sulfuree della Valle del Lucido per uso balneoterapico.</p>
-        </div>
-        <div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">XI secolo</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Documenti medievali</h4>
+        </li>
+
+        <li class="timeline__entry">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <span class="timeline__label">XI secolo</span>
+          <h3>Documenti medievali</h3>
           <p>Le sorgenti appaiono nei documenti del Marchesato Malaspina come "acque sulfuree" di Equi, note per le virtù curative.</p>
-        </div>
-        <div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">1878</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Fondazione dello Stabilimento</h4>
+        </li>
+
+        <li class="timeline__entry">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <span class="timeline__label">1878</span>
+          <h3>Fondazione dello Stabilimento</h3>
           <p>Apertura del primo stabilimento termale con struttura dedicata. Le terme di Equi diventano una destinazione per la borghesia toscana e ligure.</p>
-        </div>
-        <div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">Anni '60-'70</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Il periodo d'oro</h4>
+        </li>
+
+        <li class="timeline__entry">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <span class="timeline__label">Anni '60–'70</span>
+          <h3>Il periodo d'oro</h3>
           <p>Con il boom economico le terme diventano una meta turistica di massa, con migliaia di visitatori annui. Vengono ampliate le piscine e i reparti di cura.</p>
-        </div>
-        <div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;">2024</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Centro benessere Equi Terme</h4>
+        </li>
+
+        <li class="timeline__entry">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <span class="timeline__label">2024</span>
+          <h3>Centro benessere Equi Terme</h3>
           <p>La gestione passa a Centro benessere Equi Terme s.p.a., che avvia un programma di modernizzazione delle strutture e ampliamento dell'offerta wellness.</p>
-        </div>
-        <div>
-          <p style="color: var(--azzurro-turchese); font-size:0.8rem; letter-spacing:0.2em; font-weight:500; text-transform:uppercase; margin-bottom:0.25rem;"> Estate 2026 ✨</p>
-          <h4 style="color:white; margin-bottom:0.5rem;">Inaugurazione Nuova SPA</h4>
+        </li>
+
+        <li class="timeline__entry">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <span class="timeline__label">Estate 2026 ✨</span>
+          <h3>Inaugurazione Nuova SPA</h3>
           <p>Apertura della nuova area SPA, un nuovo capitolo nella storia delle Terme di Equi sta per essere scritto.</p>
-        </div>
-      </div>
+        </li>
+
+      </ol>
     </div>
   </div>
 </section>
@@ -127,16 +143,21 @@
     <div class="section-header text-center" data-aos="fade-up">
       <span class="overline">Chimica e proprietà</span>
       <h2 id="h2-acque">Le acque solfuree di Equi Terme</h2>
-      <p>Classificate dal Ministero della Salute come "acque solfuree bicarbonato-calciche", le acque di Equi Terme emergono a una temperatura di circa 20-22°C dopo aver percorso un tragitto sotterraneo attraverso formazioni dolomitiche e anidritiche delle Alpi Apuane.</p>
+      <p>Classificate dal Ministero della Salute come "acque solfuree bicarbonato-calciche", le acque di Equi Terme emergono a una temperatura di circa 20–22 °C dopo aver percorso un tragitto sotterraneo attraverso formazioni dolomitiche e anidritiche delle Alpi Apuane.</p>
     </div>
 
-    <div class="grid-2" style="gap: 3rem; margin-bottom: 3rem;" data-aos="fade-up">
+    <div class="chimica-grid" data-aos="fade-up">
+
+      <!-- Composizione chimica -->
       <div>
-        <h3 style="margin-bottom:1.25rem;">Composizione chimica</h3>
-        <p>Le acque di Equi appartengono alla categoria delle <strong>acque oligominerali solfuree</strong>. Il loro contenuto in zolfo, sotto forma di idrogeno solforato (H₂S) e ioni solfuro, è il principio attivo fondamentale delle proprietà terapeutiche. La composizione include:</p>
-        <table class="price-table" style="margin-top:1.5rem;">
+        <h3>Composizione chimica</h3>
+        <p>Le acque di Equi appartengono alla categoria delle <strong>acque oligominerali solfuree</strong>. Il loro contenuto in zolfo, sotto forma di idrogeno solforato (H₂S) e ioni solfuro, è il principio attivo fondamentale delle proprietà terapeutiche.</p>
+        <table class="price-table cols-chimica chimica-table" aria-label="Composizione chimica delle acque di Equi Terme">
           <thead>
-            <tr><th>Componente</th><th>Caratteristica</th></tr>
+            <tr>
+              <th scope="col">Componente</th>
+              <th scope="col">Caratteristica</th>
+            </tr>
           </thead>
           <tbody>
             <tr><td>Bicarbonato di calcio</td><td>Minerale prevalente</td></tr>
@@ -144,53 +165,59 @@
             <tr><td>Magnesio</td><td>Effetto muscolo-rilassante</td></tr>
             <tr><td>Sodio</td><td>Equilibrio idro-elettrolitico</td></tr>
             <tr><td>Silicio</td><td>Azione dermoprotettiva</td></tr>
-            <tr><td>pH</td><td>~7.4 (leggermente alcalino)</td></tr>
-            <tr><td>Temperatura sorgente</td><td>~20-22°C</td></tr>
+            <tr><td>pH</td><td>~7,4 (leggermente alcalino)</td></tr>
+            <tr><td>Temperatura sorgente</td><td>~20–22 °C</td></tr>
           </tbody>
         </table>
       </div>
+
+      <!-- Proprietà terapeutiche -->
       <div>
-        <h3 style="margin-bottom:1.25rem;">Proprietà terapeutiche riconosciute</h3>
+        <h3>Proprietà terapeutiche riconosciute</h3>
         <p>Le acque solfuree di Equi hanno ottenuto il riconoscimento ministeriale per il trattamento delle seguenti patologie:</p>
-        <div class="accordion" style="margin-top:1.5rem;">
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="false">
-              Apparato respiratorio <span class="acc-icon">+</span>
+
+        <div class="accordion accordion--spaced" role="list">
+
+          <div class="accordion__item" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" type="button">
+              Apparato respiratorio <span class="acc-icon" aria-hidden="true">+</span>
             </button>
             <div class="accordion__body">
-              Le acque solfuree esercitano un'azione fluidificante, mucolitica e antinfiammatoria sulle mucose delle vie aeree. Indicate per riniti croniche, sinusiti, faringiti, laringiti, bronchiti ricorrenti e otiti medie essudative nei bambini. Le inalazioni dirette e l'aerosol termale sono i trattamenti più efficaci.
+              Le acque solfuree esercitano un'azione fluidificante, mucolitica e antinfiammatoria sulle mucose delle vie aeree. Indicate per riniti croniche, sinusiti, faringiti, laringiti, bronchiti ricorrenti e otiti medie essudative nei bambini.
             </div>
           </div>
 
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="false">
-              Cute e dermatologia <span class="acc-icon">+</span>
+          <div class="accordion__item" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" type="button">
+              Cute e dermatologia <span class="acc-icon" aria-hidden="true">+</span>
             </button>
             <div class="accordion__body">
-              Le acque solfuree hanno un'azione cheratolitica, riepitelizzante e antiparassitaria sulla cute. Sono indicate per psoriasi, eczema, dermatiti croniche, acne e alcune forme di alopecia. La balneoterapia e le applicazioni di fango termale sono le principali modalità di trattamento dermatologico.
+              Le acque solfuree hanno un'azione cheratolitica, riepitelizzante e antiparassitaria sulla cute. Sono indicate per psoriasi, eczema, dermatiti croniche, acne e alcune forme di alopecia.
             </div>
           </div>
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="false">
-              Sistema vascolare <span class="acc-icon">+</span>
+
+          <div class="accordion__item" role="listitem">
+            <button class="accordion__trigger" aria-expanded="false" type="button">
+              Sistema vascolare <span class="acc-icon" aria-hidden="true">+</span>
             </button>
             <div class="accordion__body">
-              L'idroterapia con acque termali favorisce la vasodilatazione periferica, migliora la circolazione artero-venosa e ha effetti positivi sull'insufficienza venosa cronica e sulle arteriopatie periferiche lievi. I bagni termali con idromassaggio potenziano ulteriormente questi effetti.
+              L'idroterapia con acque termali favorisce la vasodilatazione periferica, migliora la circolazione artero-venosa e ha effetti positivi sull'insufficienza venosa cronica e sulle arteriopatie periferiche lievi.
             </div>
           </div>
+
         </div>
       </div>
+
     </div>
-
+  </div>
 </section>
-
 
 <!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo">
+        <a href="index.html" class="nav__logo" aria-label="Terme di Equi — Home">
           <span class="nav__logo-main">Terme di Equi</span>
           <span class="nav__logo-sub">Centro Benessere · Fivizzano</span>
         </a>
@@ -200,11 +227,9 @@
         <h4>Navigazione</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="le-terme.html">Le Terme & la Storia</a></li>
-          <li><a href="trattamenti-e-cure.html">Trattamenti & Cure</a></li>
-
-          <li><a href="prezzi.html">Prezzi & Orari</a></li>
-
+          <li><a href="le-terme.html">Le Terme &amp; la Storia</a></li>
+          <li><a href="trattamenti-e-cure.html">Trattamenti &amp; Cure</a></li>
+          <li><a href="prezzi.html">Prezzi &amp; Orari</a></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -217,25 +242,23 @@
       <div class="footer__col">
         <h4>Contatti</h4>
         <ul>
-          <li><a href="tel:3759154083">+39 375 9154083</a></li>
-          <li><a href="tel:0585949339">+39 0585 949339</a></li>
-          <li><a href="mailto:segr.centrobenessereequiterme@yahoo.com">segr.centrobenessereequiterme@yahoo.com</a></li>
-          <li style="color:rgba(255,255,255,0.6);">Via Noce Verde 12, Equi Terme</li>
+          <li><a href="tel:+393759154083">+39 375 9154083</a></li>
+          <li><a href="tel:+390585949339">+39 0585 949339</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#7605131104581513180204191413181305051304131307031f0213041b13360f171e19195815191b"><span class="__cf_email__" data-cfemail="7f0c1a180d511c1a110b0d101d1a111a0c0c1a0d1a1a0e0a160b1a0d121a3f061e171010511c1012">[email&#160;protected]</span></a></li>
+          <li>Via Noce Verde 12, Equi Terme</li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
       <p>© 2025 Centro Benessere Equi Terme F.G.M - Toscana SRT — P.IVA 01449350451</p>
       <nav class="footer__legal" aria-label="Link legali">
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="cookie-policy.html">Cookie Policy</a>
-  <a href="note-legali.html">Note Legali</a>
-</nav>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="note-legali.html">Note Legali</a>
+      </nav>
     </div>
   </div>
 </footer>
-
-
 
 <script src="script.js" defer></script>
 </body>

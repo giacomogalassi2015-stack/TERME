@@ -4,16 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Preload font critici -->
+  <link rel="preload" href="fonts/CormorantGaramond-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Jost-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+
   <!-- SEO Title & Meta -->
-  <title>Terme di Equi — Piscine Termali & SPA a Fivizzano (MS)</title>
-  <meta name="description" content="Terme di Equi centro benessere a Fivizzano: piscine termali solfuree, cure termali, fangoterapia . Aperto tutto l'anno. Scopri prezzi e trattamenti.">
+  <title>Terme di Equi — Piscine Termali &amp; SPA a Fivizzano (MS)</title>
+  <meta name="description" content="Terme di Equi centro benessere a Fivizzano: piscine termali solfuree, cure termali, fangoterapia. Aperto tutto l'anno. Scopri prezzi e trattamenti.">
   <meta name="keywords" content="terme Equi, terme Fivizzano, terme Lunigiana, piscine termali, cure termali solfuree, nuova SPA Equi Terme, massaggi benessere Massa Carrara">
   <link rel="canonical" href="https://www.termediequi.com/index.html">
   <link rel="alternate" hreflang="it" href="https://www.termediequi.com/index.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Terme di Equi — Piscine Termali & SPA Fivizzano">
+  <meta property="og:title" content="Terme di Equi — Piscine Termali &amp; SPA Fivizzano">
   <meta property="og:description" content="Acque solfuree, cure termali immersi nella natura della Lunigiana. Scopri il Terme di Equi centro benessere.">
   <meta property="og:url" content="https://www.termediequi.com/">
   <meta property="og:image" content="https://res.cloudinary.com/de278ryzj/image/upload/w_1200,h_630,c_fill,g_auto,q_auto,f_jpg/v1773928821/503741239_17895433767251714_1050365484845062097_n_v8mhss.jpg">
@@ -66,46 +70,46 @@
   <nav class="nav container" aria-label="Navigazione principale">
     <a href="index.html" class="nav__logo" aria-label="Terme di Equi — Home">
       <span class="nav__logo-main">Terme di Equi</span>
-      <span class="nav__logo-sub">Centro Benessere  </span>
+      <span class="nav__logo-sub">Centro Benessere</span>
     </a>
     <ul class="nav__links" role="list">
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
       <li><a href="le-terme.html">Le Terme</a></li>
       <li><a href="trattamenti-e-cure.html">Trattamenti</a></li>
-
       <li><a href="prezzi.html">Prezzi</a></li>
     </ul>
-    <button class="nav__burger" aria-label="Apri menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="nav__burger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-nav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
   </nav>
 </header>
 
 <!-- Mobile Nav Overlay -->
-<div class="nav__mobile" role="dialog" aria-label="Menu mobile">
+<nav id="mobile-nav" class="nav__mobile" role="dialog" aria-label="Menu di navigazione mobile" aria-hidden="true">
   <a href="index.html">Home</a>
   <a href="le-terme.html">Le Terme</a>
   <a href="trattamenti-e-cure.html">Trattamenti</a>
-  <a href="prezzi.html">Prezzi & Orari</a>
-</div>
+  <a href="prezzi.html">Prezzi &amp; Orari</a>
+</nav>
 
 <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
-<section class="hero" aria-label="Benvenuti alle Terme di Equi">
+<section class="hero" aria-labelledby="hero-heading">
   <div class="hero__bg" role="img" aria-label="Vista aerea del parco termale Terme di Equi con piscine"></div>
 
   <div class="container hero__content">
-    <h1>Dove l'acqua <em>guarisce</em>, la natura abbraccia</h1>
+    <h1 id="hero-heading">Dove l'acqua <em>guarisce</em>, la natura abbraccia</h1>
     <p class="hero__sub">Acque solfuree naturali, piscine termali, cure specializzate e la nuova area SPA. Un'oasi di benessere nel cuore della Lunigiana, tra Alpi Apuane e Cinque Terre.</p>
     <div class="hero__actions">
-      
+      <a href="trattamenti-e-cure.html" class="btn btn--primary">Scopri i trattamenti</a>
+      <a href="prezzi.html" class="btn btn--ghost">Prezzi &amp; Orari</a>
     </div>
   </div>
   <div class="hero__scroll" aria-hidden="true">
     <div class="hero__scroll-line"></div>
-  
   </div>
 </section>
-
 
 <!-- ═══ PANORAMICA STRUTTURA ══════════════════════════════════════════ -->
 <section class="section" aria-labelledby="h2-panoramica">
@@ -115,17 +119,16 @@
       <h2 id="h2-panoramica">Un'esperienza termale completa</h2>
       <p>Dalle sorgenti naturali alle piscine curative, dai trattamenti terapeutici alla nuova SPA: tutto in un unico parco termale di rara bellezza.</p>
     </div>
-    
+
     <div class="grid-3" role="list">
       <article class="card" role="listitem" data-aos="fade-up" data-aos-delay="0">
         <div class="card__img">
-          <img src="https://res.cloudinary.com/de278ryzj/image/upload/v1773929209/509239014_17894976324251714_6156381106198697081_n_gn0vbx.webp"
-               alt="Piscine termali esterne del Terme di Equi centro benessere"
-               width="800" height="600" loading="lazy">
+          <img
+            src="https://res.cloudinary.com/de278ryzj/image/upload/v1773929209/509239014_17894976324251714_6156381106198697081_n_gn0vbx.webp"
+            alt="Piscine termali esterne del Terme di Equi con l'acqua azzurra nel verde della Lunigiana"
+            width="800" height="600" loading="lazy">
         </div>
-        
-        <h3 class="card__band card__band--blu">Parco Termale & Piscine</h3>
-        
+        <h3 class="card__band card__band--blu">Parco Termale &amp; Piscine</h3>
         <div class="card__body">
           <p>Quattro piscine con acque solfuree naturali all'interno di un parco verde di 3 ettari, per relax totale nella natura della Lunigiana.</p>
           <a href="le-terme.html" class="btn btn--outline">L'acqua e la sua storia</a>
@@ -134,13 +137,12 @@
 
       <article class="card" role="listitem" data-aos="fade-up" data-aos-delay="100">
         <div class="card__img">
-          <img src="https://res.cloudinary.com/de278ryzj/image/upload/v1773936054/7_fvkduf.jpg"
-               alt="Sala trattamenti cure termali inalazioni e fangoterapia alle Terme di Equi"
-               width="800" height="600" loading="lazy">
+          <img
+            src="https://res.cloudinary.com/de278ryzj/image/upload/v1773936054/7_fvkduf.jpg"
+            alt="Sala trattamenti cure termali inalazioni e fangoterapia alle Terme di Equi"
+            width="800" height="600" loading="lazy">
         </div>
-        
         <h3 class="card__band card__band--verde">Cure Termali</h3>
-        
         <div class="card__body">
           <p>Inalazioni, aerosol, fanghi terapeutici e balneoterapia con le acque bicarbonato-solfato-calciche di Equi. Trattamenti convenzionati.</p>
           <a href="trattamenti-e-cure.html" class="btn btn--outline">I trattamenti</a>
@@ -149,29 +151,27 @@
 
       <article class="card" role="listitem" data-aos="fade-up" data-aos-delay="200">
         <div class="card__img">
-          <img src="https://res.cloudinary.com/terme-equi/image/upload/w_800,c_fill,f_auto,q_auto:eco/nuova-spa.jpg"
-               alt="La nuova piscina SPA al primo piano delle Terme di Equi con vista panoramica"
-               width="800" height="600" loading="lazy">
+          <img
+            src="https://res.cloudinary.com/terme-equi/image/upload/w_800,c_fill,f_auto,q_auto:eco/nuova-spa.jpg"
+            alt="La nuova piscina SPA al primo piano delle Terme di Equi con vista panoramica"
+            width="800" height="600" loading="lazy">
         </div>
-        
         <h3 class="card__band card__band--oro">Nuova Area SPA</h3>
-        
         <div class="card__body">
-          <p>A breve apriremo la SPA: il primo piano offre una piscina interna con idromassaggio, una piscina panoramica esterna anch'essa fornita di idromassaggio e doccia emozionale.</p>
-          <a class="btn btn--outline">PROSSIMAMENTE</a>
+          <p>A breve apriremo la SPA: piscina interna con idromassaggio, piscina panoramica esterna e doccia emozionale al primo piano.</p>
+          <span class="btn btn--outline" aria-label="Prossimamente disponibile">Prossimamente</span>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-
 <!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo">
+        <a href="index.html" class="nav__logo" aria-label="Terme di Equi — Home">
           <span class="nav__logo-main">Terme di Equi</span>
           <span class="nav__logo-sub">Centro Benessere · Fivizzano</span>
         </a>
@@ -181,40 +181,35 @@
         <h4>Navigazione</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="le-terme.html">Le Terme & la Storia</a></li>
-          <li><a href="trattamenti-e-cure.html">Trattamenti & Cure</a></li>
-
-          <li><a href="prezzi.html">Prezzi & Orari</a></li>
-
+          <li><a href="le-terme.html">Le Terme &amp; la Storia</a></li>
+          <li><a href="trattamenti-e-cure.html">Trattamenti &amp; Cure</a></li>
+          <li><a href="prezzi.html">Prezzi &amp; Orari</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h4>Trattamenti</h4>
         <ul>
           <li><a href="trattamenti-e-cure.html#inalazioni">Inalazioni Termali</a></li>
-
-
           <li><a href="trattamenti-e-cure.html#viso">Trattamenti Viso</a></li>
-
         </ul>
       </div>
       <div class="footer__col">
         <h4>Contatti</h4>
         <ul>
-          <li><a href="tel:3759154083">+39 375 9154083</a></li>
-          <li><a href="tel:0585949339">+39 0585 949339</a></li>
+          <li><a href="tel:+393759154083">+39 375 9154083</a></li>
+          <li><a href="tel:+390585949339">+39 0585 949339</a></li>
           <li><a href="mailto:segr.centrobenessereequiterme@yahoo.com">segr.centrobenessereequiterme@yahoo.com</a></li>
-          <li style="color:rgba(255,255,255,0.6);">Via Noce Verde 12, Equi Terme</li>
+          <li>Via Noce Verde 12, Equi Terme</li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
       <p>© 2025 Centro Benessere Equi Terme F.G.M - Toscana SRT — P.IVA 01449350451</p>
       <nav class="footer__legal" aria-label="Link legali">
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="cookie-policy.html">Cookie Policy</a>
-  <a href="note-legali.html">Note Legali</a>
-</nav>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="note-legali.html">Note Legali</a>
+      </nav>
     </div>
   </div>
 </footer>

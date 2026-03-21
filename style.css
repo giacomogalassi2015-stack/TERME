@@ -1,7 +1,7 @@
 /* =========================================
-   TERME DI EQUI — style.css
-   v4 — Refactor completo: tabelle responsive,
-        allineamenti, spaziatura uniforme
+   TERME DI EQUI — style.css  v5
+   Refactor completo: zero stili inline,
+   timeline, trattamenti, ARIA, performance
    ========================================= */
 
 /* ── Self-hosted fonts (nessuna connessione a Google) ── */
@@ -33,6 +33,7 @@
   font-style: italic;
   font-display: swap;
 }
+
 /* ─── CSS Variables ────────────────────────────────────────────── */
 :root {
   --bianco-pietra:    #F7F5F0;
@@ -115,7 +116,7 @@ p  { max-width: 70ch; }
   z-index:    1000;
   padding:    1.25rem 0;
   background: transparent;
-  transition: var(--transition);
+  transition: background var(--transition), padding var(--transition), box-shadow var(--transition);
 }
 .site-header.scrolled {
   background:      rgba(13,37,69,0.96);
@@ -330,75 +331,51 @@ p  { max-width: 70ch; }
 .btn--block         { width: 100%; justify-content: center; }
 
 /* ─── Cards ────────────────────────────────────────────────────── */
-/* Layout generale della scheda */
-.card { 
-    background: var(--bianco-puro); 
-    border-radius: var(--radius-md); 
-    overflow: hidden; 
-    box-shadow: var(--shadow-soft); 
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.card {
+  background:     var(--bianco-puro);
+  border-radius:  var(--radius-md);
+  overflow:       hidden;
+  box-shadow:     var(--shadow-soft);
+  transition:     var(--transition);
+  display:        flex;
+  flex-direction: column;
+  height:         100%;
 }
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-deep); }
 
-.card:hover { 
-    transform: translateY(-6px); 
-    box-shadow: var(--shadow-deep); 
-}
+.card__img            { aspect-ratio: 4/3; overflow: hidden; }
+.card__img img        { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.card:hover .card__img img { transform: scale(1.05); }
 
-.card__img { 
-    aspect-ratio: 4/3; 
-    overflow: hidden; 
-}
-
-.card__img img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    transition: transform 0.5s ease; 
-}
-
-.card:hover .card__img img { 
-    transform: scale(1.05); 
-}
-
-/* NUOVA FASCIA TITOLO */
 .card__band {
-    margin: 0;
-    padding: 1rem;
-    text-align: center;
-    color: var(--bianco-puro); /* O il colore di testo che preferisci */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 5.5rem; /* Forza l'altezza uniforme anche per i titoli più corti */
+  margin:          0;
+  padding:         1rem;
+  text-align:      center;
+  color:           var(--bianco-puro);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  min-height:      5.5rem;
 }
+.card__band--blu   { background-color: #1a4b6e; }
+.card__band--verde { background-color: #4a7c59; }
+.card__band--oro   { background-color: #d4af37; }
 
-/* Colori delle singole fasce */
-.card__band--blu { background-color: #1a4b6e; } /* Inserisci il tuo var(--blu) */
-.card__band--verde { background-color: #4a7c59; } /* Inserisci il tuo var(--verde) */
-.card__band--oro { background-color: #d4af37; } /* Inserisci il tuo var(--oro) */
-
-/* Corpo della scheda e allineamento */
-.card__body { 
-    padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Occupa tutto lo spazio rimanente */
+.card__body {
+  padding:        1.75rem;
+  display:        flex;
+  flex-direction: column;
+  flex-grow:      1;
 }
-
-.card__body p { 
-    font-size: 0.95rem; 
-    color: var(--grigio-caldo); 
-    margin-bottom: 1.5rem;
-    text-align: center; /* Opzionale: per centrare anche la descrizione */
+.card__body p {
+  font-size:     0.95rem;
+  color:         var(--grigio-caldo);
+  margin-bottom: 1.5rem;
+  text-align:    center;
 }
-
-/* Allineamento del pulsante sul fondo */
 .card__body .btn {
-    margin-top: auto; 
-    align-self: center; /* Centra il pulsante orizzontalmente */
+  margin-top:  auto;
+  align-self:  center;
 }
 
 /* ─── Grid utilities ───────────────────────────────────────────── */
@@ -422,11 +399,11 @@ p  { max-width: 70ch; }
 .split__text p:last-of-type { margin-bottom: 0; }
 
 /* ─── BG variants ──────────────────────────────────────────────── */
-.bg-blu                                  { background: var(--blu-marino); color: var(--bianco-puro); }
+.bg-blu                         { background: var(--blu-marino); color: var(--bianco-puro); }
 .bg-blu h1, .bg-blu h2,
-.bg-blu h3, .bg-blu h4                  { color: var(--bianco-puro); }
-.bg-blu p                               { color: rgba(255,255,255,0.75); }
-.bg-turchese                            { background: var(--azzurro-pallido); }
+.bg-blu h3, .bg-blu h4         { color: var(--bianco-puro); }
+.bg-blu p                      { color: rgba(255,255,255,0.75); }
+.bg-turchese                   { background: var(--azzurro-pallido); }
 
 /* ─── Pill tags ────────────────────────────────────────────────── */
 .tag        { display: inline-block; padding: 0.25rem 0.85rem; border-radius: 100px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
@@ -435,9 +412,9 @@ p  { max-width: 70ch; }
 .tag--oro   { background: rgba(201,168,76,0.15); color: #8B6914; }
 
 /* ─── Info box ─────────────────────────────────────────────────── */
-.info-box          { background: var(--azzurro-pallido); border-left: 3px solid var(--blu-cobalto); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1.25rem 1.5rem; font-size: 0.9rem; color: var(--grigio-scuro); }
-.info-box strong   { color: var(--blu-cobalto); }
-.note-text         { font-size: 0.85rem; color: var(--grigio-caldo); font-style: italic; }
+.info-box        { background: var(--azzurro-pallido); border-left: 3px solid var(--blu-cobalto); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1.25rem 1.5rem; font-size: 0.9rem; color: var(--grigio-scuro); }
+.info-box strong { color: var(--blu-cobalto); }
+.note-text       { font-size: 0.85rem; color: var(--grigio-caldo); font-style: italic; }
 
 /* ─── Page hero (pagine interne) ───────────────────────────────── */
 .page-hero {
@@ -470,13 +447,71 @@ p  { max-width: 70ch; }
 .page-hero__content p  { color: rgba(255,255,255,0.78); font-size: 1.05rem; max-width: 60ch; }
 
 /* ═══════════════════════════════════════════════════════════════════
-   PRICE TABLES — Sistema completo responsive
+   TIMELINE — le-terme.html
    ═══════════════════════════════════════════════════════════════════ */
+.timeline {
+  max-width: 700px;
+  margin:    0 auto;
+  position:  relative;
+}
+.timeline__line {
+  position:   absolute;
+  left:       2rem;
+  top:        0;
+  bottom:     0;
+  width:      2px;
+  background: rgba(168,216,232,0.3);
+}
+.timeline__entries {
+  display:        flex;
+  flex-direction: column;
+  gap:            2.5rem;
+  padding-left:   5rem;
+}
+.timeline__entry { position: relative; }
+.timeline__dot {
+  position:      absolute;
+  left:          -3.25rem;
+  top:           0.2rem;
+  width:         2rem;
+  height:        2rem;
+  background:    var(--azzurro-turchese);
+  border-radius: 50%;
+  flex-shrink:   0;
+}
+.timeline__label {
+  color:          var(--azzurro-turchese);
+  font-size:      0.8rem;
+  letter-spacing: 0.2em;
+  font-weight:    500;
+  text-transform: uppercase;
+  margin-bottom:  0.25rem;
+  display:        block;
+}
+.timeline__entry h4 {
+  color:         white;
+  margin-bottom: 0.5rem;
+}
+.timeline__entry p {
+  color: rgba(255,255,255,0.75);
+}
 
-/* Blocco contenitore per ogni sezione prezzi */
-.price-block { margin-bottom: 3.5rem; }
-.price-block:last-child { margin-bottom: 0; }
+/* ═══════════════════════════════════════════════════════════════════
+   TABELLA COMPOSIZIONE CHIMICA — le-terme.html
+   ═══════════════════════════════════════════════════════════════════ */
+.chimica-grid {
+  display:       grid;
+  grid-template-columns: 1fr 1fr;
+  gap:           3rem;
+  margin-bottom: 3rem;
+}
+.chimica-grid h3 { margin-bottom: 1.25rem; }
 
+/* ═══════════════════════════════════════════════════════════════════
+   PRICE TABLES — sistema completo responsive
+   ═══════════════════════════════════════════════════════════════════ */
+.price-block             { margin-bottom: 3.5rem; }
+.price-block:last-child  { margin-bottom: 0; }
 .price-block-title {
   font-family:    var(--font-display);
   font-size:      1.8rem;
@@ -485,13 +520,10 @@ p  { max-width: 70ch; }
   padding-bottom: 0.75rem;
   border-bottom:  3px solid var(--azzurro-turchese);
 }
+.legend          { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--grigio-scuro); }
+.legend-item     { display: flex; align-items: center; gap: 0.5rem; }
+.legend-dot      { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 
-/* Legenda feriale/festivo */
-.legend           { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.82rem; color: var(--grigio-scuro); }
-.legend-item      { display: flex; align-items: center; gap: 0.5rem; }
-.legend-dot       { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-
-/* Tabella base — layout fisso, colonne proporzionali */
 .price-table {
   width:           100%;
   border-collapse: collapse;
@@ -500,10 +532,8 @@ p  { max-width: 70ch; }
   overflow:        hidden;
   box-shadow:      var(--shadow-soft);
   font-size:       0.95rem;
-  table-layout:    fixed;   /* colonne stabili, niente overflow inatteso */
+  table-layout:    fixed;
 }
-
-/* Thead */
 .price-table thead tr { background: var(--blu-cobalto); color: var(--bianco-puro); }
 .price-table th {
   padding:        0.9rem 1.25rem;
@@ -514,8 +544,6 @@ p  { max-width: 70ch; }
   text-align:     left;
   vertical-align: middle;
 }
-
-/* Tbody */
 .price-table td {
   padding:        0.95rem 1.25rem;
   text-align:     left;
@@ -526,34 +554,21 @@ p  { max-width: 70ch; }
 .price-table tbody tr:last-child td { border-bottom: none; }
 .price-table tbody tr:hover         { background: var(--azzurro-pallido); transition: background 0.2s; }
 
-/* Colonna prezzi (ultima): sempre a destra, grassetto, colore */
 .price-table td:last-child,
-.price-table th:last-child {
-  text-align:  right;
-  font-weight: 500;
-  color:       var(--bianco-puro); /* thead */
-}
+.price-table th:last-child { text-align: right; font-weight: 500; color: var(--bianco-puro); }
 .price-table tbody td:last-child { color: var(--blu-cobalto); }
 
-/* Colonna feriale/festivo: centrata */
 .price-table th.col-feriale,
 .price-table td.col-feriale,
 .price-table th.col-festivo,
-.price-table td.col-festivo {
-  text-align: center;
-}
-/* I valori numerici nelle colonne feriale/festivo sono bold blu */
+.price-table td.col-festivo { text-align: center; }
+
 .price-table tbody td.col-feriale,
-.price-table tbody td.col-festivo {
-  font-weight: 500;
-  color:       var(--blu-cobalto);
-}
+.price-table tbody td.col-festivo { font-weight: 500; color: var(--blu-cobalto); }
 
-/* Celle speciali */
-.price-table td[colspan] { text-align: center; }
-.price-highlight         { background: rgba(168,216,232,0.15); }
+.price-table td[colspan]  { text-align: center; }
+.price-highlight          { background: rgba(168,216,232,0.15); }
 
-/* ─── Larghezze colonne per tabella a 3 col (fascia / feriale / festivo) ─── */
 .price-table.cols-3 th:nth-child(1),
 .price-table.cols-3 td:nth-child(1) { width: 58%; }
 .price-table.cols-3 th:nth-child(2),
@@ -561,7 +576,6 @@ p  { max-width: 70ch; }
 .price-table.cols-3 th:nth-child(3),
 .price-table.cols-3 td:nth-child(3) { width: 21%; }
 
-/* ─── Larghezze per tabella ridotti a 4 col ─── */
 .price-table.cols-4 th:nth-child(1),
 .price-table.cols-4 td:nth-child(1) { width: 30%; }
 .price-table.cols-4 th:nth-child(2),
@@ -571,7 +585,6 @@ p  { max-width: 70ch; }
 .price-table.cols-4 th:nth-child(4),
 .price-table.cols-4 td:nth-child(4) { width: 21%; }
 
-/* ─── Larghezze per tabella abbonamenti a 3 col (tipologia/accesso/prezzo) ─── */
 .price-table.cols-abb th:nth-child(1),
 .price-table.cols-abb td:nth-child(1) { width: 48%; }
 .price-table.cols-abb th:nth-child(2),
@@ -579,7 +592,6 @@ p  { max-width: 70ch; }
 .price-table.cols-abb th:nth-child(3),
 .price-table.cols-abb td:nth-child(3) { width: 20%; }
 
-/* ─── Larghezze per carnet a 4 col ─── */
 .price-table.cols-carnet th:nth-child(1),
 .price-table.cols-carnet td:nth-child(1) { width: 40%; }
 .price-table.cols-carnet th:nth-child(2),
@@ -589,126 +601,205 @@ p  { max-width: 70ch; }
 .price-table.cols-carnet th:nth-child(4),
 .price-table.cols-carnet td:nth-child(4) { width: 18%; }
 
-/* ─── Tabella noleggi a 2 col ─── */
 .price-table.cols-2 th:nth-child(1),
 .price-table.cols-2 td:nth-child(1) { width: 70%; }
 .price-table.cols-2 th:nth-child(2),
 .price-table.cols-2 td:nth-child(2) { width: 30%; }
 
-/* Le tabelle noleggio stanno in una colonna centrata */
-.noleggi-wrap {
-  max-width: 520px;
-  margin:    0 auto;
-}
+.noleggi-wrap { max-width: 520px; margin: 0 auto; }
 
-/* ─── Tabella composizione chimica (le-terme.html) ─── */
 .price-table.cols-chimica th:nth-child(1),
 .price-table.cols-chimica td:nth-child(1) { width: 55%; }
 .price-table.cols-chimica th:nth-child(2),
 .price-table.cols-chimica td:nth-child(2) { width: 45%; text-align: left; }
-.price-table.cols-chimica tbody td:last-child { text-align: left; }
+.price-table.cols-chimica tbody td:last-child { text-align: left; color: var(--grigio-scuro); }
 
-/* ─── Mobile: le tabelle si adattano senza scroll ─── */
-@media (max-width: 768px) {
-  .price-table { font-size: 0.82rem; }
-  .price-table th,
-  .price-table td { padding: 0.7rem 0.85rem; }
-  .price-block-title { font-size: 1.4rem; }
+/* ═══════════════════════════════════════════════════════════════════
+   TRATTAMENTI — trattamenti-e-cure.html
+   ═══════════════════════════════════════════════════════════════════ */
+.tratt-hero-card {
+  background:  var(--bianco-puro);
+  border-radius: var(--radius-md);
+  padding:     2rem;
+  box-shadow:  var(--shadow-soft);
+  display:     flex;
+  gap:         1.5rem;
+  align-items: flex-start;
+  transition:  var(--transition);
+}
+.tratt-hero-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-deep); }
+.tratt-hero-card h3    { margin-bottom: 0.5rem; font-size: 1.3rem; }
+.tratt-hero-card p     { font-size: 0.92rem; color: var(--grigio-caldo); margin-bottom: 0.75rem; }
 
-  /* Su mobile le tabelle a 3-4 col diventano card impilate */
-  .price-table.cols-3,
-  .price-table.cols-4,
-  .price-table.cols-abb,
-  .price-table.cols-carnet {
-    display: block;
-  }
-  .price-table.cols-3 thead,
-  .price-table.cols-4 thead,
-  .price-table.cols-abb thead,
-  .price-table.cols-carnet thead { display: none; }
-
-  .price-table.cols-3 tbody,
-  .price-table.cols-4 tbody,
-  .price-table.cols-abb tbody,
-  .price-table.cols-carnet tbody { display: block; }
-
-  .price-table.cols-3 tr,
-  .price-table.cols-4 tr,
-  .price-table.cols-abb tr,
-  .price-table.cols-carnet tr {
-    display:       block;
-    margin-bottom: 0.75rem;
-    border-radius: var(--radius-sm);
-    border:        1px solid rgba(27,58,107,0.12);
-    overflow:      hidden;
-  }
-  .price-table.cols-3 tr:last-child,
-  .price-table.cols-4 tr:last-child,
-  .price-table.cols-abb tr:last-child,
-  .price-table.cols-carnet tr:last-child { margin-bottom: 0; }
-
-  .price-table.cols-3 td,
-  .price-table.cols-4 td,
-  .price-table.cols-abb td,
-  .price-table.cols-carnet td {
-    display:       flex;
-    justify-content: space-between;
-    align-items:   center;
-    width:         100% !important;
-    text-align:    right !important;
-    padding:       0.65rem 1rem;
-    font-size:     0.82rem;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    gap:           1rem;
-  }
-  .price-table.cols-3 td:last-child,
-  .price-table.cols-4 td:last-child,
-  .price-table.cols-abb td:last-child,
-  .price-table.cols-carnet td:last-child { border-bottom: none; }
-
-  /* Etichetta data-label come pseudo-colonna sinistra */
-  .price-table.cols-3 td::before,
-  .price-table.cols-4 td::before,
-  .price-table.cols-abb td::before,
-  .price-table.cols-carnet td::before {
-    content:     attr(data-label);
-    font-size:   0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color:       var(--grigio-caldo);
-    text-align:  left;
-    flex-shrink: 0;
-    min-width:   80px;
-  }
-  /* Celle colspan (es. "Ingresso gratuito") — full width */
-  .price-table.cols-3 td[colspan],
-  .price-table.cols-4 td[colspan] {
-    justify-content: center;
-    text-align: center !important;
-    font-size: 0.85rem;
-  }
-  .price-table.cols-3 td[colspan]::before,
-  .price-table.cols-4 td[colspan]::before { display: none; }
-
-  /* Tabelle a 2 colonne (noleggi, chimica): rimangono tabella ma compatte */
-  .price-table.cols-2 { table-layout: auto; }
-  .price-table.cols-2 th,
-  .price-table.cols-2 td { width: auto !important; }
-
-  /* Noleggi centrati su mobile */
-  .noleggi-wrap { max-width: 100%; }
+.tratt-detail {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   1rem;
+  margin-top:            1rem;
+}
+.tratt-detail-item {
+  background:    var(--azzurro-pallido);
+  border-radius: var(--radius-sm);
+  padding:       0.75rem 1rem;
+  font-size:     0.85rem;
+}
+.tratt-detail-item strong {
+  display:        block;
+  color:          var(--blu-cobalto);
+  font-size:      0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom:  0.2rem;
 }
 
-@media (max-width: 480px) {
-  .price-table th,
-  .price-table td { padding: 0.6rem 0.75rem; }
+/* Titolo sezione trattamento con bordo turchese */
+.tratt-section-title {
+  margin-bottom:  1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom:  2px solid var(--azzurro-turchese);
 }
+
+/* Scroll-margin per anchor link con header fisso */
+.tratt-anchor { scroll-margin-top: 120px; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PAGINE LEGALI — privacy, cookie, note legali
+   ═══════════════════════════════════════════════════════════════════ */
+.legal-page { padding: 5rem 0 6rem; }
+.legal-page .container { max-width: 820px; }
+
+.legal-header {
+  margin-bottom:  3rem;
+  padding-bottom: 2rem;
+  border-bottom:  2px solid var(--azzurro-turchese);
+}
+.legal-header h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.5rem; }
+.legal-meta {
+  font-size:      0.8rem;
+  color:          var(--grigio-caldo);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.legal-meta-highlight {
+  background:  rgba(201,168,76,0.15);
+  color:       #8B6914;
+  padding:     0.1rem 0.4rem;
+  border-radius: 3px;
+  font-weight: 500;
+  font-style:  normal;
+}
+
+.legal-section          { margin-bottom: 2.5rem; }
+.legal-section h2 {
+  font-size:     1.6rem;
+  margin-bottom: 0.75rem;
+  padding-left:  1rem;
+  border-left:   3px solid var(--azzurro-turchese);
+  color:         var(--blu-marino);
+}
+.legal-section h3       { font-size: 1.15rem; margin: 1.25rem 0 0.4rem; color: var(--blu-cobalto); }
+.legal-section p        { font-size: 0.95rem; color: var(--grigio-scuro); margin-bottom: 0.75rem; max-width: 100%; }
+.legal-section ul {
+  list-style:     disc;
+  padding-left:   1.5rem;
+  display:        flex;
+  flex-direction: column;
+  gap:            0.4rem;
+  font-size:      0.95rem;
+  color:          var(--grigio-scuro);
+  margin-bottom:  0.75rem;
+}
+
+/* Tabella legale generica */
+.legal-table {
+  width:           100%;
+  border-collapse: collapse;
+  font-size:       0.88rem;
+  margin:          1rem 0 1.25rem;
+  background:      var(--bianco-puro);
+  border-radius:   var(--radius-md);
+  overflow:        hidden;
+  box-shadow:      var(--shadow-soft);
+}
+.legal-table thead tr              { background: var(--blu-cobalto); color: var(--bianco-puro); }
+.legal-table th,
+.legal-table td                   { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.legal-table th                   { font-weight: 500; letter-spacing: 0.08em; font-size: 0.78rem; text-transform: uppercase; }
+.legal-table tbody tr:last-child td { border-bottom: none; }
+.legal-table tbody tr:hover        { background: var(--azzurro-pallido); }
+
+/* Cookie table */
+.cookie-table {
+  width:           100%;
+  border-collapse: collapse;
+  font-size:       0.88rem;
+  margin:          1rem 0 1.25rem;
+  background:      var(--bianco-puro);
+  border-radius:   var(--radius-md);
+  overflow:        hidden;
+  box-shadow:      var(--shadow-soft);
+}
+.cookie-table thead tr    { background: var(--blu-cobalto); color: var(--bianco-puro); }
+.cookie-table th,
+.cookie-table td          { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.06); vertical-align: top; }
+.cookie-table th          { font-weight: 500; letter-spacing: 0.08em; font-size: 0.78rem; text-transform: uppercase; }
+.cookie-table tbody tr:last-child td { border-bottom: none; }
+.cookie-table tbody tr:hover { background: var(--azzurro-pallido); }
+
+/* Badge */
+.badge          { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 100px; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+.badge--verde   { background: rgba(74,124,47,0.12); color: var(--verde-chiaro); }
+.badge--oro     { background: rgba(201,168,76,0.15); color: #8B6914; }
+.badge--grigio  { background: rgba(0,0,0,0.07); color: var(--grigio-caldo); }
+
+/* Verdict box (cookie policy) */
+.verdict-box    { background: var(--blu-marino); color: var(--bianco-puro); border-radius: var(--radius-md); padding: 2rem 2.25rem; margin: 2rem 0; }
+.verdict-box h3 { color: var(--azzurro-turchese); margin-bottom: 0.75rem; font-size: 1.3rem; }
+.verdict-box p  { color: rgba(255,255,255,0.85); font-size: 0.95rem; max-width: 100%; margin-bottom: 0.5rem; }
+.verdict-box p:last-child { margin-bottom: 0; }
+
+/* Contact box */
+.contact-box {
+  background:    var(--azzurro-pallido);
+  border-left:   3px solid var(--blu-cobalto);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding:       1.25rem 1.5rem;
+  margin-top:    1rem;
+  font-size:     0.92rem;
+}
+.contact-box strong { color: var(--blu-cobalto); display: block; margin-bottom: 0.4rem; }
+
+/* Scheda societaria (note legali) */
+.company-card { background: var(--bianco-puro); border-radius: var(--radius-md); box-shadow: var(--shadow-soft); overflow: hidden; margin-bottom: 2rem; }
+.company-card__header { background: var(--blu-cobalto); color: var(--bianco-puro); padding: 1.25rem 1.75rem; }
+.company-card__header h3 { color: var(--bianco-puro); font-size: 1.3rem; margin-bottom: 0.25rem; }
+.company-card__header p  { color: rgba(255,255,255,0.7); font-size: 0.82rem; max-width: 100%; margin: 0; }
+.company-card__body  { padding: 1.5rem 1.75rem; }
+.company-card__row {
+  display:       flex;
+  gap:           1rem;
+  padding:       0.65rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size:     0.92rem;
+  align-items:   baseline;
+}
+.company-card__row:last-child { border-bottom: none; }
+.company-card__label {
+  min-width:      160px;
+  font-size:      0.75rem;
+  font-weight:    500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--grigio-caldo);
+  flex-shrink:    0;
+}
+.company-card__value { color: var(--grigio-scuro); }
+.company-card__value a { color: var(--blu-cobalto); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ─── Accordion ────────────────────────────────────────────────── */
-.accordion                  { border: 1px solid rgba(0,0,0,0.08); border-radius: var(--radius-md); overflow: hidden; }
-.accordion__item            { border-bottom: 1px solid rgba(0,0,0,0.08); }
-.accordion__item:last-child { border-bottom: none; }
+.accordion                   { border: 1px solid rgba(0,0,0,0.08); border-radius: var(--radius-md); overflow: hidden; }
+.accordion__item             { border-bottom: 1px solid rgba(0,0,0,0.08); }
+.accordion__item:last-child  { border-bottom: none; }
 .accordion__trigger {
   width: 100%; text-align: left;
   background: var(--bianco-puro);
@@ -719,10 +810,10 @@ p  { max-width: 70ch; }
   display: flex; justify-content: space-between; align-items: center;
   transition: var(--transition);
 }
-.accordion__trigger:hover       { background: var(--azzurro-pallido); color: var(--blu-cobalto); }
-.accordion__trigger .acc-icon   { transition: transform 0.3s; font-size: 1.2rem; color: var(--blu-cobalto); }
-.accordion__trigger.open        { background: var(--azzurro-pallido); color: var(--blu-cobalto); }
-.accordion__trigger.open .acc-icon { transform: rotate(45deg); }
+.accordion__trigger:hover            { background: var(--azzurro-pallido); color: var(--blu-cobalto); }
+.accordion__trigger .acc-icon        { transition: transform 0.3s; font-size: 1.2rem; color: var(--blu-cobalto); }
+.accordion__trigger.open             { background: var(--azzurro-pallido); color: var(--blu-cobalto); }
+.accordion__trigger.open .acc-icon  { transform: rotate(45deg); }
 .accordion__body      { display: none; padding: 1.25rem 1.5rem; background: var(--bianco-puro); font-size: 0.95rem; color: var(--grigio-caldo); line-height: 1.8; }
 .accordion__body.open { display: block; }
 
@@ -737,32 +828,65 @@ p  { max-width: 70ch; }
 .footer__col ul a:hover { color: var(--azzurro-turchese); }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: 0.8rem; }
 .footer__bottom a:hover { color: var(--azzurro-turchese); }
-.footer__legal { display: flex; gap: 1.5rem; }
+.footer__legal  { display: flex; gap: 1.5rem; }
+
+/* ─── Utility: overline su sfondo scuro ───────────────────────── */
+.overline--light { color: var(--azzurro-turchese); }
+
+/* ─── Utility: tabella con margine superiore ──────────────────── */
+.chimica-table  { margin-top: 1.5rem; }
+
+/* ─── Utility: accordion con margine superiore ────────────────── */
+.accordion--spaced { margin-top: 1.5rem; }
+
+/* ─── Utility: sezione trattamento con margine superiore ─────── */
+.tratt-anchor--spaced { margin-top: 3.5rem; }
 
 /* ─── AOS fallback ─────────────────────────────────────────────── */
-[data-aos]                      { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-[data-aos].aos-animate          { opacity: 1; transform: translateY(0); }
-[data-aos="fade-left"]          { transform: translateX(-30px); }
-[data-aos="fade-left"].aos-animate  { transform: translateX(0); }
-[data-aos="fade-right"]         { transform: translateX(30px); }
-[data-aos="fade-right"].aos-animate { transform: translateX(0); }
-[data-aos="zoom-in"]            { transform: scale(0.95); }
-[data-aos="zoom-in"].aos-animate { transform: scale(1); }
-[data-aos-delay="100"]          { transition-delay: 0.1s; }
-[data-aos-delay="200"]          { transition-delay: 0.2s; }
-[data-aos-delay="300"]          { transition-delay: 0.3s; }
+[data-aos]                           { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+[data-aos].aos-animate               { opacity: 1; transform: translateY(0); }
+[data-aos="fade-left"]               { transform: translateX(-30px); }
+[data-aos="fade-left"].aos-animate   { transform: translateX(0); }
+[data-aos="fade-right"]              { transform: translateX(30px); }
+[data-aos="fade-right"].aos-animate  { transform: translateX(0); }
+[data-aos="zoom-in"]                 { transform: scale(0.95); }
+[data-aos="zoom-in"].aos-animate     { transform: scale(1); }
+[data-aos-delay="100"]               { transition-delay: 0.1s; }
+[data-aos-delay="200"]               { transition-delay: 0.2s; }
+[data-aos-delay="300"]               { transition-delay: 0.3s; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   HEADER PAGINE INTERNE (senza Hero)
+   Applicato via JS IIFE prima del paint — nessun flash
+   ═══════════════════════════════════════════════════════════════════ */
+header.site-header.header-no-hero {
+  position:         sticky !important;
+  top:              0 !important;
+  background-color: #ffffff !important;
+  box-shadow:       0 2px 10px rgba(0,0,0,0.1) !important;
+  z-index:          9999 !important;
+}
+header.site-header.header-no-hero .nav__links a,
+header.site-header.header-no-hero .nav__logo,
+header.site-header.header-no-hero .nav__logo-main,
+header.site-header.header-no-hero .nav__logo-sub {
+  color: #1a4b6e !important;
+}
+header.site-header.header-no-hero .nav__burger span {
+  background-color: #1a4b6e !important;
+}
 
 /* ═══════════════════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════════ */
-
 @media (max-width: 1024px) {
-  .footer__grid     { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-  .footer__brand    { grid-column: span 2; }
-  .split            { grid-template-columns: 1fr; gap: 3rem; }
-  .split--reverse   { direction: ltr; }
-  .split__img       { aspect-ratio: 16/9; }
-  .grid-4           { grid-template-columns: repeat(2,1fr); }
+  .footer__grid   { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .footer__brand  { grid-column: span 2; }
+  .split          { grid-template-columns: 1fr; gap: 3rem; }
+  .split--reverse { direction: ltr; }
+  .split__img     { aspect-ratio: 16/9; }
+  .grid-4         { grid-template-columns: repeat(2,1fr); }
+  .chimica-grid   { grid-template-columns: 1fr; gap: 2rem; }
 }
 
 @media (max-width: 768px) {
@@ -782,20 +906,109 @@ p  { max-width: 70ch; }
 
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
 
-  .hero__actions { flex-direction: column; }
-  .hero__actions .btn { width: 100%; justify-content: center; }
-  .hero__scroll  { display: none; }
+  .hero__actions             { flex-direction: column; }
+  .hero__actions .btn        { width: 100%; justify-content: center; }
+  .hero__scroll              { display: none; }
 
-  .page-hero { min-height: 40vh; }
+  .page-hero                 { min-height: 40vh; }
+  .section-header            { margin-bottom: 2.5rem; }
 
-  .section-header { margin-bottom: 2.5rem; }
+  .footer__grid              { grid-template-columns: 1fr; }
+  .footer__brand             { grid-column: span 1; }
+  .footer__bottom            { flex-direction: column; text-align: center; }
+  .footer__legal             { flex-wrap: wrap; justify-content: center; }
 
-  .footer__grid   { grid-template-columns: 1fr; }
-  .footer__brand  { grid-column: span 1; }
-  .footer__bottom { flex-direction: column; text-align: center; }
-  .footer__legal  { flex-wrap: wrap; justify-content: center; }
+  .accordion__trigger        { padding: 1rem 1.1rem; font-size: 0.95rem; }
 
-  .accordion__trigger { padding: 1rem 1.1rem; font-size: 0.95rem; }
+  /* Trattamenti */
+  .tratt-hero-card           { flex-direction: column; }
+  .tratt-detail              { grid-template-columns: 1fr; }
+
+  /* Timeline */
+  .timeline__entries         { padding-left: 3.5rem; }
+  .timeline__dot             { left: -2.5rem; width: 1.5rem; height: 1.5rem; }
+
+  /* Legali */
+  .legal-page                { padding: 3rem 0 4rem; }
+  .legal-table               { font-size: 0.8rem; }
+  .legal-table th,
+  .legal-table td            { padding: 0.6rem 0.75rem; }
+  .cookie-table              { font-size: 0.8rem; }
+  .cookie-table th,
+  .cookie-table td           { padding: 0.6rem 0.75rem; }
+  .verdict-box               { padding: 1.5rem; }
+  .company-card__row         { flex-direction: column; gap: 0.2rem; }
+  .company-card__label       { min-width: auto; }
+
+  /* Price tables mobile */
+  .price-table               { font-size: 0.82rem; }
+  .price-table th,
+  .price-table td            { padding: 0.7rem 0.85rem; }
+  .price-block-title         { font-size: 1.4rem; }
+
+  .price-table.cols-3,
+  .price-table.cols-4,
+  .price-table.cols-abb,
+  .price-table.cols-carnet   { display: block; }
+
+  .price-table.cols-3 thead,
+  .price-table.cols-4 thead,
+  .price-table.cols-abb thead,
+  .price-table.cols-carnet thead { display: none; }
+
+  .price-table.cols-3 tbody,
+  .price-table.cols-4 tbody,
+  .price-table.cols-abb tbody,
+  .price-table.cols-carnet tbody { display: block; }
+
+  .price-table.cols-3 tr,
+  .price-table.cols-4 tr,
+  .price-table.cols-abb tr,
+  .price-table.cols-carnet tr {
+    display: block; margin-bottom: 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(27,58,107,0.12); overflow: hidden;
+  }
+  .price-table.cols-3 tr:last-child,
+  .price-table.cols-4 tr:last-child,
+  .price-table.cols-abb tr:last-child,
+  .price-table.cols-carnet tr:last-child { margin-bottom: 0; }
+
+  .price-table.cols-3 td,
+  .price-table.cols-4 td,
+  .price-table.cols-abb td,
+  .price-table.cols-carnet td {
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100% !important; text-align: right !important;
+    padding: 0.65rem 1rem; font-size: 0.82rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06); gap: 1rem;
+  }
+  .price-table.cols-3 td:last-child,
+  .price-table.cols-4 td:last-child,
+  .price-table.cols-abb td:last-child,
+  .price-table.cols-carnet td:last-child { border-bottom: none; }
+
+  .price-table.cols-3 td::before,
+  .price-table.cols-4 td::before,
+  .price-table.cols-abb td::before,
+  .price-table.cols-carnet td::before {
+    content:        attr(data-label);
+    font-size:      0.68rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color:          var(--grigio-caldo); text-align: left;
+    flex-shrink:    0; min-width: 80px;
+  }
+  .price-table.cols-3 td[colspan],
+  .price-table.cols-4 td[colspan] {
+    justify-content: center; text-align: center !important; font-size: 0.85rem;
+  }
+  .price-table.cols-3 td[colspan]::before,
+  .price-table.cols-4 td[colspan]::before { display: none; }
+
+  .price-table.cols-2 { table-layout: auto; }
+  .price-table.cols-2 th,
+  .price-table.cols-2 td { width: auto !important; }
+  .noleggi-wrap { max-width: 100%; }
 }
 
 @media (max-width: 480px) {
@@ -803,29 +1016,6 @@ p  { max-width: 70ch; }
   .card__body     { padding: 1.25rem; }
   .nav__logo-main { font-size: 1.2rem; }
   .nav__logo-sub  { font-size: 0.6rem; letter-spacing: 0.2em; }
-}
-
-/* ==========================================================================
-   FORZATURA NAVBAR PER PAGINE SENZA HERO IMAGE (es. le-terme.html)
-   ========================================================================== */
-
-header.site-header.header-no-hero {
-    position: sticky !important;
-    top: 0 !important;
-    background-color: #ffffff !important; /* Forza sfondo bianco puro */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important; /* Aggiunge un'ombra per staccare dal fondo */
-    z-index: 9999 !important;
-}
-
-/* Forza tutti i link, i pulsanti e il logo a essere scuri */
-header.site-header.header-no-hero .nav__links a,
-header.site-header.header-no-hero .nav__logo,
-header.site-header.header-no-hero .nav__logo-main,
-header.site-header.header-no-hero .nav__logo-sub {
-    color: #1a4b6e !important; /* Colore blu scuro */
-}
-
-/* Forza l'hamburger menu a essere scuro su mobile */
-header.site-header.header-no-hero .nav__burger span {
-    background-color: #1a4b6e !important; 
+  .price-table th,
+  .price-table td { padding: 0.6rem 0.75rem; }
 }

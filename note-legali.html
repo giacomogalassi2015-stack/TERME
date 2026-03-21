@@ -4,124 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Preload font critici -->
+  <link rel="preload" href="fonts/CormorantGaramond-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Jost-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+
+  <!-- noindex: le pagine legali non devono competere con le pagine principali -->
+  <meta name="robots" content="noindex, follow">
+
   <title>Note Legali | Terme di Equi — Centro Benessere Fivizzano</title>
   <meta name="description" content="Note legali e informazioni societarie del sito www.termediequi.com — Centro Benessere Equi Terme F.G.M - Toscana SRT, P.IVA 01449350451, Equi Terme (MS).">
   <link rel="canonical" href="https://www.termediequi.com/note-legali.html">
 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-
-  <style>
-    .legal-page { padding: 5rem 0 6rem; }
-    .legal-page .container { max-width: 820px; }
-
-    .legal-header {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 2px solid var(--azzurro-turchese);
-    }
-    .legal-header h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.5rem; }
-    .legal-header .legal-meta {
-      font-size:      0.8rem;
-      color:          var(--grigio-caldo);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .legal-section { margin-bottom: 2.5rem; }
-    .legal-section h2 {
-      font-size:     1.6rem;
-      margin-bottom: 0.75rem;
-      padding-left:  1rem;
-      border-left:   3px solid var(--azzurro-turchese);
-      color:         var(--blu-marino);
-    }
-    .legal-section h3 {
-      font-size:  1.15rem;
-      margin:     1.25rem 0 0.4rem;
-      color:      var(--blu-cobalto);
-    }
-    .legal-section p {
-      font-size:    0.95rem;
-      color:        var(--grigio-scuro);
-      margin-bottom: 0.75rem;
-      max-width:    100%;
-    }
-    .legal-section ul {
-      list-style:   disc;
-      padding-left: 1.5rem;
-      display:      flex;
-      flex-direction: column;
-      gap:          0.4rem;
-      font-size:    0.95rem;
-      color:        var(--grigio-scuro);
-      margin-bottom: 0.75rem;
-    }
-
-    /* Scheda societaria */
-    .company-card {
-      background:    var(--bianco-puro);
-      border-radius: var(--radius-md);
-      box-shadow:    var(--shadow-soft);
-      overflow:      hidden;
-      margin-bottom: 2rem;
-    }
-    .company-card__header {
-      background: var(--blu-cobalto);
-      color:      var(--bianco-puro);
-      padding:    1.25rem 1.75rem;
-    }
-    .company-card__header h3 {
-      color:         var(--bianco-puro);
-      font-size:     1.3rem;
-      margin-bottom: 0.25rem;
-    }
-    .company-card__header p {
-      color:    rgba(255,255,255,0.7);
-      font-size: 0.82rem;
-      max-width: 100%;
-      margin:   0;
-    }
-    .company-card__body {
-      padding: 1.5rem 1.75rem;
-    }
-    .company-card__row {
-      display:       flex;
-      gap:           1rem;
-      padding:       0.65rem 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      font-size:     0.92rem;
-      align-items:   baseline;
-    }
-    .company-card__row:last-child { border-bottom: none; }
-    .company-card__label {
-      min-width:      160px;
-      font-size:      0.75rem;
-      font-weight:    500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color:          var(--grigio-caldo);
-      flex-shrink:    0;
-    }
-    .company-card__value { color: var(--grigio-scuro); }
-    .company-card__value a { color: var(--blu-cobalto); text-decoration: underline; text-underline-offset: 3px; }
-
-    .contact-box {
-      background:    var(--azzurro-pallido);
-      border-left:   3px solid var(--blu-cobalto);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding:       1.25rem 1.5rem;
-      margin-top:    1rem;
-      font-size:     0.92rem;
-    }
-    .contact-box strong { color: var(--blu-cobalto); display: block; margin-bottom: 0.4rem; }
-
-    @media (max-width: 600px) {
-      .company-card__row   { flex-direction: column; gap: 0.2rem; }
-      .company-card__label { min-width: auto; }
-      .legal-page { padding: 3rem 0 4rem; }
-    }
-  </style>
 </head>
 <body>
 
@@ -138,26 +33,28 @@
       <li><a href="trattamenti-e-cure.html">Trattamenti</a></li>
       <li><a href="prezzi.html">Prezzi</a></li>
     </ul>
-    <button class="nav__burger" aria-label="Apri menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="nav__burger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobile-nav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
   </nav>
 </header>
 
-<div class="nav__mobile" role="dialog" aria-label="Menu mobile">
+<nav id="mobile-nav" class="nav__mobile" role="dialog" aria-label="Menu di navigazione mobile" aria-hidden="true">
   <a href="index.html">Home</a>
   <a href="le-terme.html">Le Terme</a>
   <a href="trattamenti-e-cure.html">Trattamenti</a>
-  <a href="prezzi.html">Prezzi & Orari</a>
-</div>
+  <a href="prezzi.html">Prezzi &amp; Orari</a>
+</nav>
 
-<main class="legal-page" style="margin-top: 80px;">
+<main class="legal-page">
   <div class="container">
 
     <div class="legal-header">
       <span class="overline">Documento legale</span>
       <h1>Note Legali</h1>
-      <p class="legal-meta">Informazioni societarie ai sensi del D.Lgs. 70/2003 e del Codice del Consumo &mdash; Ultimo aggiornamento: <span style="background:rgba(201,168,76,0.15);color:#8B6914;padding:0.1rem 0.4rem;border-radius:3px;font-weight:500;">20/03/2026</span></p>
+      <p class="legal-meta">Informazioni societarie ai sensi del D.Lgs. 70/2003 e del Codice del Consumo — Ultimo aggiornamento: <em class="legal-meta-highlight">20/03/2026</em></p>
     </div>
 
     <!-- 1. Dati societari -->
@@ -188,16 +85,16 @@
             <span class="company-card__value">IT 01449350451</span>
           </div>
           <div class="company-card__row">
-            <span class="company-card__label">MS - 141855</span>
-            <span class="company-card__value" style="background:rgba(201,168,76,0.15);color:#8B6914;padding:0.1rem 0.4rem;border-radius:3px;">[N° REA — Camera di Commercio di Massa-Carrara]</span>
+            <span class="company-card__label">REA</span>
+            <span class="company-card__value">MS - 141855 — Camera di Commercio di Massa-Carrara</span>
           </div>
           <div class="company-card__row">
-            <span class="company-card__label">€ 30.000,00 (di cui € 7.500,00 versati)</span>
-            <span class="company-card__value" style="background:rgba(201,168,76,0.15);color:#8B6914;padding:0.1rem 0.4rem;border-radius:3px;">[CAPITALE SOCIALE, es. € 10.000,00 i.v.]</span>
+            <span class="company-card__label">Capitale sociale</span>
+            <span class="company-card__value">€ 30.000,00 (di cui € 7.500,00 versati)</span>
           </div>
           <div class="company-card__row">
             <span class="company-card__label">Telefono</span>
-            <span class="company-card__value"><a href="tel:0585949339">0585 949339</a></span>
+            <span class="company-card__value"><a href="tel:+390585949339">0585 949339</a></span>
           </div>
           <div class="company-card__row">
             <span class="company-card__label">E-mail</span>
@@ -205,7 +102,7 @@
           </div>
           <div class="company-card__row">
             <span class="company-card__label">PEC</span>
-            <span class="company-card__value" style="background:rgba(201,168,76,0.15);color:#8B6914;padding:0.1rem 0.4rem;border-radius:3px;">centrobenessereequiterme@pec.it
+            <span class="company-card__value"><a href="mailto:centrobenessereequiterme@pec.it">centrobenessereequiterme@pec.it</a></span>
           </div>
           <div class="company-card__row">
             <span class="company-card__label">Orari struttura</span>
@@ -220,7 +117,7 @@
       <h2>2. Proprietà intellettuale e diritti d'autore</h2>
       <p>Tutti i contenuti presenti sul sito <strong>www.termediequi.com</strong> — inclusi testi, immagini, loghi, grafiche, layout e codice sorgente — sono di proprietà esclusiva di Centro Benessere Equi Terme F.G.M - Toscana SRT o utilizzati su licenza dei rispettivi aventi diritto, e sono protetti dalla normativa vigente in materia di diritto d'autore (L. 633/1941 e successive modifiche) e dalle norme internazionali applicabili.</p>
       <p>È vietato riprodurre, distribuire, pubblicare, modificare, tradurre o sfruttare in qualsiasi modo il materiale presente sul sito senza previa autorizzazione scritta del Titolare. Sono fatte salve le riproduzioni per uso personale e non commerciale, nei limiti consentiti dalla legge.</p>
-      <p>Il marchio <strong>"Terme di Equi"</strong> e il logo associato sono segni distintivi di Centro Benessere Equi Terme F.G.M - Toscana SRT Il loro utilizzo non autorizzato è vietato.</p>
+      <p>Il marchio <strong>"Terme di Equi"</strong> e il logo associato sono segni distintivi di Centro Benessere Equi Terme F.G.M - Toscana SRT. Il loro utilizzo non autorizzato è vietato.</p>
     </div>
 
     <!-- 3. Limitazione responsabilità -->
@@ -235,7 +132,7 @@
     <div class="legal-section">
       <h2>4. Legge applicabile e foro competente</h2>
       <p>Il presente sito web e i rapporti che ne derivano sono regolati dalla legge italiana. Per qualsiasi controversia relativa all'utilizzo del sito o ai servizi offerti da Centro Benessere Equi Terme F.G.M - Toscana SRT, sarà competente in via esclusiva il Foro di <strong>Massa</strong>, salvo diversa disposizione inderogabile di legge (es. foro del consumatore).</p>
-      <p>Per gli utenti consumatori residenti nell'Unione Europea è disponibile la piattaforma europea per la risoluzione online delle controversie (ODR): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+      <p>Per gli utenti consumatori residenti nell'Unione Europea è disponibile la piattaforma europea per la risoluzione online delle controversie (ODR): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a>.</p>
     </div>
 
     <!-- 5. Informazioni sanitarie -->
@@ -253,7 +150,7 @@
         <strong>Centro Benessere Equi Terme F.G.M - Toscana SRT — Ufficio Legale</strong>
         Via Noce Verde 12, 54013 Equi Terme — Fivizzano (MS)<br>
         E-mail: <a href="mailto:centrobenessereequiterme@gmail.com">centrobenessereequiterme@gmail.com</a><br>
-        PEC: <span style="background:rgba(201,168,76,0.15);color:#8B6914;padding:0.1rem 0.4rem;border-radius:3px;">centrobenessereequiterme@pec.it
+        PEC: <a href="mailto:centrobenessereequiterme@pec.it">centrobenessereequiterme@pec.it</a>
       </div>
     </div>
 
@@ -265,7 +162,7 @@
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo">
+        <a href="index.html" class="nav__logo" aria-label="Terme di Equi — Home">
           <span class="nav__logo-main">Terme di Equi</span>
           <span class="nav__logo-sub">Centro Benessere · Fivizzano</span>
         </a>
@@ -275,24 +172,23 @@
         <h4>Navigazione</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="le-terme.html">Le Terme & la Storia</a></li>
-          <li><a href="trattamenti-e-cure.html">Trattamenti & Cure</a></li>
-          <li><a href="prezzi.html">Prezzi & Orari</a></li>
+          <li><a href="le-terme.html">Le Terme &amp; la Storia</a></li>
+          <li><a href="trattamenti-e-cure.html">Trattamenti &amp; Cure</a></li>
+          <li><a href="prezzi.html">Prezzi &amp; Orari</a></li>
         </ul>
       </div>
-   
       <div class="footer__col">
         <h4>Contatti</h4>
         <ul>
-          <li><a href="tel:3759154083">+39 375 9154083</a></li>
-          <li><a href="tel:0585949339">+39 0585 949339</a></li>
+          <li><a href="tel:+393759154083">+39 375 9154083</a></li>
+          <li><a href="tel:+390585949339">+39 0585 949339</a></li>
           <li><a href="mailto:segr.centrobenessereequiterme@yahoo.com">segr.centrobenessereequiterme@yahoo.com</a></li>
-          <li style="color:rgba(255,255,255,0.6);">Via Noce Verde 12, Equi Terme</li>
+          <li>Via Noce Verde 12, Equi Terme</li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>&copy; 2025 Centro Benessere Equi Terme F.G.M - Toscana SRT &mdash; P.IVA 01449350451</p>
+      <p>© 2025 Centro Benessere Equi Terme F.G.M - Toscana SRT — P.IVA 01449350451</p>
       <nav class="footer__legal" aria-label="Link legali">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="cookie-policy.html">Cookie Policy</a>
