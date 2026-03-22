@@ -4,62 +4,129 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Preload font critici -->
-  <link rel="preload" href="fonts/CormorantGaramond-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="fonts/Jost-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- ═══ SEO ESSENTIALS ═══════════════════════════════════════════════ -->
+  <!-- Title: 57 caratteri — keyword principale + brand + locality -->
+  <title>Terme di Equi — Piscine Termali &amp; SPA Fivizzano (MS)</title>
 
-  <!-- SEO Title & Meta -->
-  <title>Terme di Equi — Piscine Termali &amp; SPA a Fivizzano (MS)</title>
-  <meta name="description" content="Terme di Equi centro benessere a Fivizzano: piscine termali solfuree, cure termali, fangoterapia. Aperto tutto l'anno. Scopri prezzi e trattamenti.">
-  <meta name="keywords" content="terme Equi, terme Fivizzano, terme Lunigiana, piscine termali, cure termali solfuree, nuova SPA Equi Terme, massaggi benessere Massa Carrara">
-  <link rel="canonical" href="https://www.termediequi.com/index.html">
-  <link rel="alternate" hreflang="it" href="https://www.termediequi.com/index.html">
+  <!-- Description: 152 caratteri -->
+  <meta name="description" content="Terme di Equi: piscine termali solfuree, cure termali, fangoterapia e nuova SPA a Fivizzano (MS). Aperto tutto l'anno. Scopri trattamenti e prezzi.">
 
-  <!-- Open Graph -->
+  <!-- Robots: indicizzazione esplicita -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+
+  <!-- ═══ CANONICAL & HREFLANG ════════════════════════════════════════ -->
+  <link rel="canonical" href="https://www.termediequi.com/">
+  <link rel="alternate" hreflang="it" href="https://www.termediequi.com/">
+  <link rel="alternate" hreflang="x-default" href="https://www.termediequi.com/">
+
+  <!-- ═══ OPEN GRAPH ══════════════════════════════════════════════════ -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Terme di Equi — Piscine Termali &amp; SPA Fivizzano">
-  <meta property="og:description" content="Acque solfuree, cure termali immersi nella natura della Lunigiana. Scopri il Terme di Equi centro benessere.">
+  <meta property="og:site_name" content="Terme di Equi">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Terme di Equi — Piscine Termali &amp; SPA a Fivizzano (MS)">
+  <meta property="og:description" content="Acque solfuree naturali, piscine termali, cure specializzate e la nuova SPA. Un'oasi di benessere nel cuore della Lunigiana, tra Alpi Apuane e Cinque Terre.">
   <meta property="og:url" content="https://www.termediequi.com/">
   <meta property="og:image" content="https://res.cloudinary.com/de278ryzj/image/upload/w_1200,h_630,c_fill,g_auto,q_auto,f_jpg/v1773928821/503741239_17895433767251714_1050365484845062097_n_v8mhss.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Vista aerea del parco termale Terme di Equi con piscine a Fivizzano">
 
-  <!-- Schema.org JSON-LD -->
+  <!-- ═══ TWITTER CARDS ═══════════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Terme di Equi — Piscine Termali &amp; SPA a Fivizzano (MS)">
+  <meta name="twitter:description" content="Acque solfuree, cure termali e nuova SPA nella Lunigiana toscana. Scopri trattamenti e prezzi.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/de278ryzj/image/upload/w_1200,h_630,c_fill,g_auto,q_auto,f_jpg/v1773928821/503741239_17895433767251714_1050365484845062097_n_v8mhss.jpg">
+  <meta name="twitter:image:alt" content="Piscine termali esterne Terme di Equi, Fivizzano">
+
+  <!-- ═══ DATI STRUTTURATI JSON-LD ════════════════════════════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalOrganization",
-    "@id": "https://www.termediequi.com/#organization",
-    "name": "Terme di Equi centro benessere",
-    "legalName": "Terme di Equi centro benessere",
-    "url": "https://www.termediequi.com/",
-    "logo": "https://www.termediequi.com/img/logo.png",
-    "description": "Centro termale con piscine solfuree, cure termali, fangoterapia e nuova area SPA a Equi Terme, Fivizzano (MS).",
-    "telephone": "+390585949339",
-    "email": "segr.centrobenessereequiterme@yahoo.com",
-    "vatID": "IT01449350451",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Via Noce Verde 12",
-      "addressLocality": "Equi Terme",
-      "addressRegion": "Toscana",
-      "postalCode": "54013",
-      "addressCountry": "IT"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 44.2115,
-      "longitude": 10.1658
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "10:00",
-      "closes": "19:00"
-    },
-    "medicalSpecialty": "Hydrotherapy",
-    "sameAs": ["https://www.facebook.com/termeequi"]
+    "@graph": [
+      {
+        "@type": "DaySpa",
+        "@id": "https://www.termediequi.com/#organization",
+        "name": "Terme di Equi Centro Benessere",
+        "legalName": "Centro Benessere Equi Terme F.G.M - Toscana SRT",
+        "description": "Centro termale con piscine solfuree naturali, cure termali riconosciute dal Ministero della Salute, fangoterapia e nuova area SPA. Aperto tutto l'anno a Equi Terme, Fivizzano (MS).",
+        "url": "https://www.termediequi.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.termediequi.com/img/logo.png",
+          "width": 200,
+          "height": 60
+        },
+        "image": "https://res.cloudinary.com/de278ryzj/image/upload/w_1200,h_630,c_fill,g_auto,q_auto,f_jpg/v1773928821/503741239_17895433767251714_1050365484845062097_n_v8mhss.jpg",
+        "telephone": ["+393759154083", "+390585949339"],
+        "email": "segr.centrobenessereequiterme@yahoo.com",
+        "vatID": "IT01449350451",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Via Noce Verde 12",
+          "addressLocality": "Equi Terme",
+          "addressRegion": "Toscana",
+          "postalCode": "54013",
+          "addressCountry": "IT"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.21150,
+          "longitude": 10.16580
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "10:00",
+          "closes": "19:00"
+        },
+        "hasMap": "https://www.google.com/maps?q=44.2115,10.1658",
+        "sameAs": ["https://www.facebook.com/termeequi"],
+        "availableService": [
+          { "@type": "MedicalTherapy", "name": "Inalazioni Termali" },
+          { "@type": "MedicalTherapy", "name": "Aerosol Termale" },
+          { "@type": "MedicalTherapy", "name": "Fangoterapia" },
+          { "@type": "MedicalTherapy", "name": "Balneoterapia" },
+          { "@type": "Service", "name": "Piscine Termali Solfuree" },
+          { "@type": "Service", "name": "Trattamenti Viso" },
+          { "@type": "Service", "name": "Area SPA" }
+        ],
+        "medicalSpecialty": "Hydrotherapy"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.termediequi.com/#website",
+        "url": "https://www.termediequi.com/",
+        "name": "Terme di Equi",
+        "description": "Centro termale con piscine solfuree, cure termali e SPA a Fivizzano, Lunigiana.",
+        "publisher": { "@id": "https://www.termediequi.com/#organization" },
+        "inLanguage": "it-IT"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.termediequi.com/#webpage",
+        "url": "https://www.termediequi.com/",
+        "name": "Terme di Equi — Piscine Termali & SPA Fivizzano (MS)",
+        "isPartOf": { "@id": "https://www.termediequi.com/#website" },
+        "about": { "@id": "https://www.termediequi.com/#organization" },
+        "description": "Home page del centro termale Terme di Equi: piscine solfuree, cure termali riconosciute e nuova area SPA a Fivizzano, Lunigiana.",
+        "inLanguage": "it-IT",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.termediequi.com/" }
+          ]
+        }
+      }
+    ]
   }
   </script>
 
+  <!-- ═══ PRELOAD FONT CRITICI ════════════════════════════════════════ -->
+  <link rel="preload" href="fonts/CormorantGaramond-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Jost-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+
+  <!-- ═══ SITEMAP & ASSET ═════════════════════════════════════════════ -->
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 </head>
@@ -68,7 +135,7 @@
 <!-- ═══ HEADER ═══════════════════════════════════════════════════════ -->
 <header class="site-header" role="banner">
   <nav class="nav container" aria-label="Navigazione principale">
-    <a href="index.html" class="nav__logo" aria-label="Terme di Equi — Home">
+    <a href="index.html" class="nav__logo" aria-label="Terme di Equi Centro Benessere — Torna alla Home">
       <span class="nav__logo-main">Terme di Equi</span>
       <span class="nav__logo-sub">Centro Benessere</span>
     </a>
@@ -94,12 +161,15 @@
   <a href="prezzi.html">Prezzi &amp; Orari</a>
 </nav>
 
-<!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+<!-- ═══ HERO ══════════════════════════════════════════════════════════
+     H1 unico per pagina — keyword principale "terme solfuree Lunigiana"
+     incorporata nel testo visibile -->
 <section class="hero" aria-labelledby="hero-heading">
-  <div class="hero__bg" role="img" aria-label="Vista aerea del parco termale Terme di Equi con piscine"></div>
+  <div class="hero__bg" role="img" aria-label="Vista aerea del parco termale Terme di Equi con piscine solfuree immerso nel verde della Lunigiana"></div>
 
   <div class="container hero__content">
-    <h1 id="hero-heading">Dove l'acqua <em>guarisce</em>, la natura abbraccia</h1>
+    <!-- ✅ H1 UNICO — keyword primaria + concetto differenziante -->
+    <h1 id="hero-heading">Terme di Equi: dove l'acqua <em>guarisce</em>, la natura abbraccia</h1>
     <p class="hero__sub">Acque solfuree naturali, piscine termali, cure specializzate e la nuova area SPA. Un'oasi di benessere nel cuore della Lunigiana, tra Alpi Apuane e Cinque Terre.</p>
     <div class="hero__actions">
       <a href="trattamenti-e-cure.html" class="btn btn--primary">Scopri i trattamenti</a>
@@ -111,57 +181,61 @@
   </div>
 </section>
 
-<!-- ═══ PANORAMICA STRUTTURA ══════════════════════════════════════════ -->
+<!-- ═══ PANORAMICA STRUTTURA ══════════════════════════════════════════
+     H2 — sezione principale sotto l'hero -->
 <section class="section" aria-labelledby="h2-panoramica">
   <div class="container">
     <div class="section-header text-center" data-aos="fade-up">
       <span class="overline">La nostra struttura</span>
-      <h2 id="h2-panoramica">Un'esperienza termale completa</h2>
-      <p>Dalle sorgenti naturali alle piscine curative, dai trattamenti terapeutici alla nuova SPA: tutto in un unico parco termale di rara bellezza.</p>
+      <!-- ✅ H2 — argomento della sezione -->
+      <h2 id="h2-panoramica">Un'esperienza termale completa a Fivizzano</h2>
+      <p>Dalle sorgenti naturali alle piscine curative, dai trattamenti terapeutici alla nuova SPA: tutto in un unico parco termale di rara bellezza nella Lunigiana toscana.</p>
     </div>
 
     <div class="grid-3" role="list">
+
+      <!-- Card 1: Parco Termale -->
       <article class="card" role="listitem" data-aos="fade-up" data-aos-delay="0">
         <div class="card__img">
           <img
             src="https://res.cloudinary.com/de278ryzj/image/upload/v1773929209/509239014_17894976324251714_6156381106198697081_n_gn0vbx.webp"
-            alt="Piscine termali esterne del Terme di Equi con l'acqua azzurra nel verde della Lunigiana"
+            alt="Piscine termali esterne delle Terme di Equi con acqua azzurra solfurea nel parco verde della Lunigiana, Fivizzano"
             width="800" height="600" loading="lazy">
         </div>
-        <h3 class="card__band card__band--blu">Parco Termale &amp; Piscine</h3>
+        <!-- ✅ H3 — titolo card subordinato all'H2 -->
+        <h3 class="card__band card__band--blu">Parco Termale &amp; Piscine Solfuree</h3>
         <div class="card__body">
           <p>Quattro piscine con acque solfuree naturali all'interno di un parco verde di 3 ettari, per relax totale nella natura della Lunigiana.</p>
           <a href="le-terme.html" class="btn btn--outline">L'acqua e la sua storia</a>
         </div>
       </article>
 
+      <!-- Card 2: Cure Termali -->
       <article class="card" role="listitem" data-aos="fade-up" data-aos-delay="100">
         <div class="card__img">
           <img
             src="https://res.cloudinary.com/de278ryzj/image/upload/v1773936054/7_fvkduf.jpg"
-            alt="Sala trattamenti cure termali inalazioni e fangoterapia alle Terme di Equi"
+            alt="Sala trattamenti cure termali con postazioni per inalazioni e aerosol alle Terme di Equi, Fivizzano"
             width="800" height="600" loading="lazy">
         </div>
-        <h3 class="card__band card__band--verde">Cure Termali</h3>
+        <!-- ✅ H3 -->
+        <h3 class="card__band card__band--verde">Cure Termali Riconosciute</h3>
         <div class="card__body">
-          <p>Inalazioni, aerosol, fanghi terapeutici e balneoterapia con le acque bicarbonato-solfato-calciche di Equi. Trattamenti convenzionati.</p>
-          <a href="trattamenti-e-cure.html" class="btn btn--outline">I trattamenti</a>
+          <p>Inalazioni, aerosol, fanghi terapeutici e balneoterapia con le acque bicarbonato-solfato-calciche di Equi. Trattamenti convenzionati con il SSN.</p>
+          <a href="trattamenti-e-cure.html" class="btn btn--outline">Scopri i trattamenti</a>
         </div>
       </article>
 
+      <!-- Card 3: Nuova SPA -->
       <article class="card" role="listitem" data-aos="fade-up" data-aos-delay="200">
-        <div class="card__img">
-          <img
-            src="https://res.cloudinary.com/terme-equi/image/upload/w_800,c_fill,f_auto,q_auto:eco/nuova-spa.jpg"
-            alt="La nuova piscina SPA al primo piano delle Terme di Equi con vista panoramica"
-            width="800" height="600" loading="lazy">
-        </div>
-        <h3 class="card__band card__band--oro">Nuova Area SPA</h3>
+        <!-- ✅ H3 -->
+        <h3 class="card__band card__band--oro">Nuova Area SPA — Estate 2026</h3>
         <div class="card__body">
           <p>A breve apriremo la SPA: piscina interna con idromassaggio, piscina panoramica esterna e doccia emozionale al primo piano.</p>
-          <span class="btn btn--outline" aria-label="Prossimamente disponibile">Prossimamente</span>
+          <span class="btn btn--outline" aria-label="Nuova SPA: apertura prevista estate 2026, prossimamente disponibile">Prossimamente</span>
         </div>
       </article>
+
     </div>
   </div>
 </section>
@@ -171,11 +245,11 @@
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="nav__logo" aria-label="Terme di Equi — Home">
+        <a href="index.html" class="nav__logo" aria-label="Terme di Equi Centro Benessere — Home">
           <span class="nav__logo-main">Terme di Equi</span>
           <span class="nav__logo-sub">Centro Benessere · Fivizzano</span>
         </a>
-        <p>Un'oasi termale nel cuore della Lunigiana, tra le Alpi Apuane e le Cinque Terre. Acque curative, natura incontaminata e benessere autentico.</p>
+        <p>Un'oasi termale nel cuore della Lunigiana, tra le Alpi Apuane e le Cinque Terre. Acque curative solfuree, natura incontaminata e benessere autentico.</p>
       </div>
       <div class="footer__col">
         <h4>Navigazione</h4>
@@ -199,7 +273,7 @@
           <li><a href="tel:+393759154083">+39 375 9154083</a></li>
           <li><a href="tel:+390585949339">+39 0585 949339</a></li>
           <li><a href="mailto:segr.centrobenessereequiterme@yahoo.com">segr.centrobenessereequiterme@yahoo.com</a></li>
-          <li>Via Noce Verde 12, Equi Terme</li>
+          <li>Via Noce Verde 12, Equi Terme (MS)</li>
         </ul>
       </div>
     </div>

@@ -1,0 +1,80 @@
+# ==============================================================
+# robots.txt — Terme di Equi Centro Benessere
+# https://www.termediequi.com/
+# Aggiornato: 2025-06-01
+# ==============================================================
+
+# ── Regole per tutti i crawler ─────────────────────────────────
+User-agent: *
+
+# Consenti l'accesso alle pagine principali
+Allow: /
+Allow: /le-terme.html
+Allow: /trattamenti-e-cure.html
+Allow: /prezzi.html
+Allow: /nuova-spa.html
+Allow: /contatti.html
+
+# Consenti asset statici (CSS, JS, font, immagini)
+Allow: /style.css
+Allow: /script.js
+Allow: /fonts/
+Allow: /img/
+
+# Blocca pagine legali (non aggiungono valore SEO)
+Disallow: /privacy-policy.html
+Disallow: /cookie-policy.html
+Disallow: /note-legali.html
+
+# Blocca eventuali URL di sistema, admin, staging
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /*.php$
+
+# Blocca URL con parametri query non canonici
+Disallow: /*?*utm_source=
+Disallow: /*?*utm_medium=
+Disallow: /*?*utm_campaign=
+Disallow: /*?*ref=
+Disallow: /*?*session=
+
+# ── Regole specifiche per Googlebot ───────────────────────────
+User-agent: Googlebot
+Allow: /
+# Consenti rendering completo degli asset JS e CSS
+Allow: /style.css
+Allow: /script.js
+Allow: /fonts/
+Allow: /img/
+
+# ── Regole specifiche per Googlebot-Image ─────────────────────
+User-agent: Googlebot-Image
+Allow: /img/
+Allow: /fonts/
+
+# ── Regole specifiche per Bingbot ─────────────────────────────
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# ── Blocco bot malevoli e scrapers noti ───────────────────────
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# ── Sitemap ───────────────────────────────────────────────────
+Sitemap: https://www.termediequi.com/sitemap.xml

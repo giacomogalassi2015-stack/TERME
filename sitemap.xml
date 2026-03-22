@@ -5,31 +5,23 @@
   <url>
     <loc>https://www.termediequi.com/</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.termediequi.com/"/>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.termediequi.com/le-terme.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.termediequi.com/le-terme.html"/>
-    <lastmod>2025-06-01</lastmod>
+    <loc>https://www.termediequi.com/le-terme</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.termediequi.com/le-terme"/>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.termediequi.com/trattamenti-e-cure.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.termediequi.com/trattamenti-e-cure.html"/>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.termediequi.com/nuova-spa.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.termediequi.com/nuova-spa.html"/>
-    <lastmod>2025-06-01</lastmod>
+    <loc>https://www.termediequi.com/trattamenti-e-cure</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.termediequi.com/trattamenti-e-cure"/>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -40,14 +32,6 @@
     <lastmod>2025-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://www.termediequi.com/contatti.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.termediequi.com/contatti.html"/>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
   </url>
 
 </urlset>
