@@ -27,8 +27,8 @@
   </url>
 
   <url>
-    <loc>https://www.termediequi.com/prezzi.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.termediequi.com/prezzi.html"/>
+    <loc>https://www.termediequi.com/prezzi</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.termediequi.com/prezzi"/>
     <lastmod>2025-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
